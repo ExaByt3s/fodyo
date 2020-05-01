@@ -17,3 +17,4 @@ bitrix/modules/updater_partner.log
 bitrix/.settings.php
 /develop
 upload.tar.gz
+/bitrix/error_log
