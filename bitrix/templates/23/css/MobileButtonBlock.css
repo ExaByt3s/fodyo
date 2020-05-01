@@ -1,0 +1,40 @@
+.top-menu-btn-mobileBlock{
+    width: 100%;
+   /* height: 48px*/
+    background-color: rgba(0,0,0,0.8);
+   	display: none;
+   	/*display: flex;*/
+    position: fixed;
+   	justify-content: center;
+   	align-items: center;
+    bottom: 0;
+    z-index: 100000;
+    -webkit-transform: translateZ(0);
+    font-size: 10px;
+}
+
+.top-menu-btn-mobileButton {
+    width: calc(100% - 20px);
+    height: 7vh;
+    margin: 10px 10px 10px 10px;
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+  	border: unset;
+    background: linear-gradient(0deg, rgba(219, 68, 37, 1) 0%, rgba(227, 97, 53, 1) 57%);
+    /*border-radius: 10px;*/
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+  	user-select: none;
+} 
+.top-menu-btn-mobileButton:hover { background: linear-gradient(0deg, rgba(227, 97, 53, 1) 0%, rgba(219, 68, 37, 1) 57%); }
+
+@media (max-width: 1170px){
+	.top-menu-btn-mobileBlock{
+    display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

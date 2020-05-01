@@ -1,0 +1,2 @@
+[15-Jan-2020 14:11:11 UTC] PHP Parse error:  syntax error, unexpected '$_REQUEST' (T_VARIABLE), expecting ')' in /home/bxadmin/public_html/search/index.php on line 63
+[15-Jan-2020 14:11:12 UTC] PHP Parse error:  syntax error, unexpected '$_REQUEST' (T_VARIABLE), expecting ')' in /home/bxadmin/public_html/search/index.php on line 63

@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Requisites";
+$arDirProperties = Array(
+
+);
+?>

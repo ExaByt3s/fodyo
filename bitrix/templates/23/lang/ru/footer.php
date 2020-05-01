@@ -1,0 +1,29 @@
+<?
+$MESS['COMPANY_TITLE'] = 'Компания';
+$MESS['ABOUT_COMPANY'] = 'О компании';
+$MESS['CONTACTS'] = 'Контакты';
+$MESS['NEWS'] = 'Новости';
+$MESS['REVEIWS'] = 'Отзывы';
+$MESS['ARTICLES'] = 'Статьи';
+$MESS['HELP_TITLE'] = 'Помощь';
+$MESS['VOPROS_OTVET'] = 'Вопрос-ответ';
+$MESS['GARANTII'] = 'Гарантии';
+$MESS['REKVIZITI'] = 'Реквизиты';
+$MESS['PRIVACY_POLICY'] = 'Политика конфиденциальности';
+$MESS['PAYMENT_METHODS'] = 'Способы оплаты';
+$MESS['CALL_BACK'] = 'Обратный звонок';
+$MESS['PHONE'] = 'Телефон';
+$MESS['CALL_ME'] = 'Позвоните';
+$MESS['TITLE_APPLICATION'] = 'Оставить заявку';
+$MESS['PHONE_PLACEHOLDER'] = 'Номер телефона';
+$MESS['NAME_PLACEHOLDER'] = 'Ваше имя';
+$MESS['SENDING_TEXT'] = 'Ознакомлен с ';
+$MESS['AGREEMENT_TEXT'] = 'Политикой конфиденциальности';
+$MESS['SENDING_TEXT2'] = 'Согласен на обработку ';
+$MESS['AGREEMENT_TEXT2'] = 'персональных данных';
+$MESS['HREF_POLICY'] = '/ru/policy/';
+$MESS['SEND_APPLICATION'] = 'Отправить';
+$MESS['WRONG_CAPTCHA'] = 'Неверный код с картинки';
+$MESS['CONFIRM_CALLBACK_TEXT'] = 'Ваша заявка успешно отправлена!';
+$MESS['COPYRIGHT_TEXT'] = 'Copyright © 2019 fodyo.com. All rights reserved.';
+?>

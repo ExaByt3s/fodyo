@@ -1,0 +1,30 @@
+<?
+$MESS['COMPANY_TITLE'] = 'Company';
+$MESS['ABOUT_COMPANY'] = 'About company';
+$MESS['CONTACTS'] = 'Contacts';
+$MESS['NEWS'] = 'News';
+$MESS['REVEIWS'] = 'Reveiws';
+$MESS['ARTICLES'] = 'Articles';
+$MESS['HELP_TITLE'] = 'Privacy policy';
+$MESS['VOPROS_OTVET'] = 'Question answer';
+$MESS['GARANTII'] = 'Guarantees';
+$MESS['REKVIZITI'] = 'Requisites';
+$MESS['PRIVACY_POLICY'] = 'Privacy policy';
+$MESS['PAYMENT_METHODS'] = 'Payment methods';
+$MESS['CALL_BACK'] = 'Call back';
+$MESS['PHONE'] = 'Phone';
+$MESS['CALL_ME'] = 'Call me';
+$MESS['TITLE_APPLICATION'] = 'Request Info';
+$MESS['TITLE_QUOTE'] = 'Request Quote';
+$MESS['PHONE_PLACEHOLDER'] = 'Phone number';
+$MESS['NAME_PLACEHOLDER'] = 'Your name';
+$MESS['SENDING_TEXT'] = 'I have read the ';
+$MESS['AGREEMENT_TEXT'] = 'Privacy policy';
+$MESS['SENDING_TEXT2'] = 'I have read and accept the ';
+$MESS['AGREEMENT_TEXT2'] = 'Terms of use';
+$MESS['HREF_POLICY'] = '/policy/';
+$MESS['SEND_APPLICATION'] = 'Submit';
+$MESS['WRONG_CAPTCHA'] = 'Wrong code from picture';
+$MESS['CONFIRM_CALLBACK_TEXT'] = 'Your request has been successfully submitted!';
+$MESS['COPYRIGHT_TEXT'] = 'Copyright © 2019 fodyo.com. All rights reserved.';
+?>

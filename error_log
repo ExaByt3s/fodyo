@@ -1,0 +1,57 @@
+[15-Nov-2019 07:02:42 UTC] PHP Parse error:  syntax error, unexpected '$USER' (T_VARIABLE) in /home/bxadmin/public_html/logTest.php on line 4
+[18-Nov-2019 07:06:24 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /home/bxadmin/public_html/bitrix/modules/main/classes/general/file.php on line 2261
+[22-Nov-2019 10:37:46 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 28672 bytes) in /home/bxadmin/public_html/bitrix/modules/main/classes/general/file.php on line 2261
+[22-Nov-2019 13:49:53 UTC] PHP Parse error:  syntax error, unexpected '$getItem' (T_VARIABLE) in /home/bxadmin/public_html/index.php on line 90
+[22-Nov-2019 13:49:55 UTC] PHP Parse error:  syntax error, unexpected '$getItem' (T_VARIABLE) in /home/bxadmin/public_html/index.php on line 90
+[22-Mar-2020 10:09:22 UTC] PHP Parse error:  syntax error, unexpected '!' in /home/bxadmin/public_html/index.php on line 773
+[22-Mar-2020 10:09:57 UTC] PHP Parse error:  syntax error, unexpected 'require' (T_REQUIRE) in /home/bxadmin/public_html/index.php on line 774
+[22-Mar-2020 11:23:12 UTC] PHP Warning:  require_once(geoip.inc): failed to open stream: No such file or directory in /home/bxadmin/public_html/redirect.php on line 3
+[22-Mar-2020 11:23:12 UTC] PHP Fatal error:  require_once(): Failed opening required 'geoip.inc' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/bxadmin/public_html/redirect.php on line 3
+[22-Mar-2020 11:36:39 UTC] PHP Recoverable fatal error:  Object of class GeoIP could not be converted to string in /home/bxadmin/public_html/redirect.php on line 6
+[22-Mar-2020 11:57:57 UTC] PHP Recoverable fatal error:  Object of class GeoIP could not be converted to string in /home/bxadmin/public_html/redirect.php on line 6
+[27-Mar-2020 14:37:18 UTC] PHP Warning:  A non-numeric value encountered in /home/bxadmin/public_html/redirect.php on line 6
+[27-Mar-2020 14:37:18 UTC] PHP Warning:  A non-numeric value encountered in /home/bxadmin/public_html/redirect.php on line 8
+[27-Mar-2020 14:37:18 UTC] PHP Warning:  A non-numeric value encountered in /home/bxadmin/public_html/redirect.php on line 9
+[27-Mar-2020 14:37:18 UTC] PHP Warning:  A non-numeric value encountered in /home/bxadmin/public_html/redirect.php on line 10
+[11-Apr-2020 08:24:00 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 4
+[11-Apr-2020 08:24:00 UTC] PHP Warning:  file_get_contents(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 4
+[11-Apr-2020 08:24:00 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 4
+[11-Apr-2020 08:24:00 UTC] PHP Warning:  file_get_contents(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 4
+[11-Apr-2020 08:24:00 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 4
+[11-Apr-2020 08:24:00 UTC] PHP Warning:  file_get_contents(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 4
+[11-Apr-2020 08:34:51 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 11
+[11-Apr-2020 08:34:51 UTC] PHP Warning:  file_get_contents(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 11
+[11-Apr-2020 08:34:51 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 11
+[11-Apr-2020 08:34:51 UTC] PHP Warning:  file_get_contents(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 11
+[11-Apr-2020 08:34:51 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 11
+[11-Apr-2020 08:34:51 UTC] PHP Warning:  file_get_contents(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 11
+[11-Apr-2020 08:44:56 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 13
+[11-Apr-2020 08:44:56 UTC] PHP Warning:  copy(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 13
+[11-Apr-2020 08:44:56 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 13
+[11-Apr-2020 08:44:56 UTC] PHP Warning:  copy(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 13
+[11-Apr-2020 08:44:56 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 13
+[11-Apr-2020 08:44:56 UTC] PHP Warning:  copy(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 13
+[11-Apr-2020 08:46:30 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 14
+[11-Apr-2020 08:46:30 UTC] PHP Warning:  copy(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 14
+[11-Apr-2020 08:46:30 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 14
+[11-Apr-2020 08:46:30 UTC] PHP Warning:  copy(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 14
+[11-Apr-2020 08:46:30 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 14
+[11-Apr-2020 08:46:30 UTC] PHP Warning:  copy(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 14
+[11-Apr-2020 08:52:35 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:52:35 UTC] PHP Warning:  copy(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:52:35 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:52:35 UTC] PHP Warning:  copy(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:52:35 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:52:35 UTC] PHP Warning:  copy(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:33 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:33 UTC] PHP Warning:  copy(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:33 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:33 UTC] PHP Warning:  copy(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:33 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:33 UTC] PHP Warning:  copy(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:36 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:36 UTC] PHP Warning:  copy(https://mc.yandex.ru/metrika/tag.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:36 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:36 UTC] PHP Warning:  copy(https://www.googletagmanager.com/gtag/js?id=UA-155094331-1): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:36 UTC] PHP Warning:  copy(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/bxadmin/public_html/downloadJS.php on line 15
+[11-Apr-2020 08:53:36 UTC] PHP Warning:  copy(https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js): failed to open stream: no suitable wrapper could be found in /home/bxadmin/public_html/downloadJS.php on line 15

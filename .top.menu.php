@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Developments", 
+		"/developments/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Condos / Apartments", 
+		"/condos/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Single Family Homes", 
+		"/single-family-homes/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Mortgage", 
+		"/mortgage/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Investments", 
+		"/investments/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

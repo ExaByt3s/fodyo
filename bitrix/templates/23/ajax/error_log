@@ -1,0 +1,18 @@
+[14-Jan-2020 08:29:33 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 90
+[14-Jan-2020 08:30:02 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 101
+[16-Jan-2020 14:57:27 UTC] PHP Parse error:  syntax error, unexpected 'array' (T_ARRAY), expecting ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 129
+[16-Jan-2020 14:57:27 UTC] PHP Parse error:  syntax error, unexpected 'array' (T_ARRAY), expecting ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 129
+[16-Jan-2020 14:57:29 UTC] PHP Parse error:  syntax error, unexpected 'array' (T_ARRAY), expecting ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 129
+[16-Jan-2020 14:57:29 UTC] PHP Parse error:  syntax error, unexpected 'array' (T_ARRAY), expecting ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 129
+[16-Jan-2020 15:19:36 UTC] PHP Parse error:  syntax error, unexpected '$uf_arresult' (T_VARIABLE) in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 270
+[16-Jan-2020 15:19:36 UTC] PHP Parse error:  syntax error, unexpected '$uf_arresult' (T_VARIABLE) in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 270
+[16-Jan-2020 15:21:58 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 286
+[16-Jan-2020 15:21:58 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 286
+[22-Jan-2020 07:43:39 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 9
+[22-Jan-2020 07:43:39 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 9
+[22-Jan-2020 12:04:27 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 37
+[22-Jan-2020 12:04:40 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 39
+[23-Jan-2020 09:56:35 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 40
+[23-Jan-2020 09:56:35 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 40
+[23-Jan-2020 09:56:36 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 40
+[23-Jan-2020 09:56:37 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/bxadmin/public_html/bitrix/templates/23/ajax/new_filter_ajax.php on line 40

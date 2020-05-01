@@ -1,0 +1,67 @@
+.cookie-container{
+    width: 100%;
+   /* height: 48px*/
+    background-color: rgba(0,0,0,0.8);
+   	display: none;
+   	/*display: flex;*/
+    position: fixed;
+   	justify-content: space-between;
+   	align-items: center;
+    bottom: 0;
+    z-index: 100000;
+    -webkit-transform: translateZ(0);
+    font-size: 10px;
+}
+.cookie-container-text{
+   	/*display: inline-block;*/
+   	text-align: justify;
+  	/*background: blue;   */ 
+    color: #ffffff;
+  	padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+.cookie-container-text a{
+    color: rgba(219, 68, 37, 1);
+}
+.cookie-container-button{
+    min-width: 200px;
+    min-height: 40px;
+    height: auto;
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+}
+
+.accept {
+    width: 150px;
+    height: 30px;
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+  	border: unset;
+    background: linear-gradient(0deg, rgba(219, 68, 37, 1) 0%, rgba(227, 97, 53, 1) 57%);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+  	user-select: none;
+} 
+.accept:hover { background: linear-gradient(0deg, rgba(227, 97, 53, 1) 0%, rgba(219, 68, 37, 1) 57%); }
+
+@media (max-width: 1170px){
+	.cookie-container{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.cookie-container-button{
+    	width: 100%;
+	}
+  .accept {
+    width: 180px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+}

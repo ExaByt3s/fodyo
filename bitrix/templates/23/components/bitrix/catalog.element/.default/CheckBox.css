@@ -1,0 +1,47 @@
+.checkboxAgrementBlockInSidebar{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInSidebar #idCheckboxInSidebar{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInSidebar div.black{
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+.checkboxPolicyBlockInSidebar{
+    display: flex;
+    margin: 10px 0 40px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInSidebar #idCheckboxPolicyInSidebar{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInSidebar div.black{
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}

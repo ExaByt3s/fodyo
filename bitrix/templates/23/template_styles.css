@@ -1,0 +1,21 @@
+@media (max-width: 1500px){
+	.bx-inc-orginfo{
+		width: 11%;
+	}
+}
+.bx-inc-orginfo-phone{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.bx-inc-orginfo-phone > *{
+    position: static;
+    margin-right: 0;
+    text-align: right;
+}
+.bx-inc-orginfo-phone > a{
+	margin-right: 0;
+}
+.bx-inc-orginfo-phone > a:nth-child(2){
+    position: absolute;
+}

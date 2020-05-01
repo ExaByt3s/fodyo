@@ -1,0 +1,93 @@
+.checkboxAgrementBlockInFooter{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInFooter #idCheckboxInFooter{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInFooter div.white{
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+.checkboxPolicyBlockInFooter{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInFooter #idCheckboxPolicyInFooter{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInFooter div.white{
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+/*=================*/
+
+.checkboxAgrementBlockInPopup{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInPopup #idCheckboxInPopup{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInPopup div.agreement{
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+.checkboxPolicyBlockInPopup{
+    display: flex;
+    margin: 10px 0 20px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInPopup #idCheckboxPolicyInPopup{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInPopup div.agreement{
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}

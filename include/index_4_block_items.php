@@ -1,0 +1,1 @@
+Cottages, villas, townhouses
