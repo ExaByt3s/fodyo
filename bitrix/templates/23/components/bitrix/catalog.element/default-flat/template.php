@@ -165,6 +165,7 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
 </div>
 <?
 
+
 if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
     ?>
     <div class="max-width">
