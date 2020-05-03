@@ -23,23 +23,44 @@ use \Bitrix\Main\Localization\Loc;
  */
 ?>
 
+
+ <?php 
+ /*function debug($param) {
+    if ($_COOKIE['debug'] == 1) {
+        echo '<pre>';
+        print_r($param);
+        echo '</pre>';
+    }
+    return 0;
+}*/?>
 <div class="product-item">
     <a href="javascript:void(0)" class="open-item" title="<?=$imgTitle?>">
         <?
         $res = GetIBlockElement(
             $item['ID']
         );
+        //debug($res['PROPERTIES']);
         ?>
         <div class="column text-image">
             <div class="preview-product-title-table">
+            <?php 
+            
+            if(LANGUAGE_ID == 'en')
+            {
+                if(strpos($res['PROPERTIES']['FLAT_TYPE']['VALUE'], 'комнатная') !== false)
+                {
+                    $res['PROPERTIES']['FLAT_TYPE']['VALUE'] = $res['PROPERTIES']['BEDS_EN']['VALUE'].'-комнатная';
+                }
+            }
+            ?>
                 <div class="table-content-full-size">
                 <?
-                print_r(  str_replace('Свободная планировка', GetMessage('FREE_LAYOUT_TEXT_FS'), str_replace('комнатная', GetMessage('FLAT_ROOMED_TEXT_FS'),str_replace(' квартира', '', $res['PROPERTIES']['FLAT_TYPE']['VALUE'])))  );
+                print_r(  str_replace('Студия', GetMessage('STUDY'), str_replace('Свободная планировка', GetMessage('FREE_LAYOUT_TEXT_FS'), str_replace('комнатная', GetMessage('FLAT_ROOMED_TEXT_FS'),str_replace(' квартира', '', $res['PROPERTIES']['FLAT_TYPE']['VALUE'])))  ));
                 ?>
                 </div>
                 <div class="table-content-mobile-size">
                 <?
-                print_r(  str_replace('Свободная планировка', GetMessage('FREE_LAYOUT_TEXT_MS'), str_replace('-комнатная', GetMessage('FLAT_ROOMED_TEXT_MS'),str_replace(' квартира', '', $res['PROPERTIES']['FLAT_TYPE']['VALUE'])))  );
+                print_r(  str_replace('Студия', GetMessage('STUDY'), str_replace('Свободная планировка', GetMessage('FREE_LAYOUT_TEXT_MS'), str_replace('-комнатная', GetMessage('FLAT_ROOMED_TEXT_MS'),str_replace(' квартира', '', $res['PROPERTIES']['FLAT_TYPE']['VALUE']))) ) );
                 ?>
                 </div>
                 

@@ -165,6 +165,7 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
 </div>
 <?
 
+
 if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
     ?>
     <div class="max-width">
@@ -679,6 +680,9 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                     <?
                                 }*/
                                 
+                                //debug($priceItem);
+                                //debug($arResult);
+                                
                                 foreach ($arResult['DISPLAY_PROPERTIES'] as $key => $value) {
                                     if($key =='FLOOR'){
                                         ?>
@@ -728,20 +732,33 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                                 <div class="left"><?=$value['NAME']?></div>
                                                 <div class="right">
                                                     <?
+                                                    $areaLot =str_replace(',','.',$arResult['PROPERTIES']['UNIT_SIZE_'.strtoupper(LANGUAGE_ID)]['VALUE']);
+                                                    
+                                                    //debug($areaLot);
+                                                    //debug($priceLot);
+                                                    //debug(ceil($priceLot/$areaLot));
                                                     if(LANGUAGE_ID == 'en'){
                                                         $currency = 'USD';
                                                     }else{
                                                         $currency = "RUB";
                                                     }
                                                     if($_COOKIE['CURRENCY_SET']){
-                                                        echo CCurrencyLang::CurrencyFormat(
+                                                        /*echo CCurrencyLang::CurrencyFormat(
                                                             ceil(CCurrencyRates::ConvertCurrency($value['VALUE'], $currency, $_COOKIE['CURRENCY_SET'])),
                                                             $_COOKIE['CURRENCY_SET']
+                                                            );*/
+                                                        $priceLot = CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], $_COOKIE['CURRENCY_SET']);
+                                                        echo CCurrencyLang::CurrencyFormat(ceil($priceLot/$areaLot),
+                                                        $_COOKIE['CURRENCY_SET']
                                                         );
                                                     }else{
-                                                        echo CCurrencyLang::CurrencyFormat(
+                                                        /*echo CCurrencyLang::CurrencyFormat(
                                                             ceil(CCurrencyRates::ConvertCurrency($value['VALUE'], $currency, 'USD')),
                                                             'USD'
+                                                            );*/
+                                                        $priceLot = CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], 'USD');
+                                                        echo CCurrencyLang::CurrencyFormat(ceil($priceLot/$areaLot),
+                                                        'USD'
                                                         );
                                                     }
                                                     
