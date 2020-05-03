@@ -204,8 +204,9 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                     <?
                     $xplode = explode('/', $APPLICATION->GetCurDir());
                     $getReq = explode(';', $_REQUEST['item']);
-                    $plo = explode('-', $getReq[0]);
-                    $headerTitlePart = strtoupper($getReq[0]);
+                    $getReqTitle = (LANGUAGE_ID == "ru") ? $getReq : explode(';', $_REQUEST['title']);
+                    $plo = explode('-', $getReqTitle[0]);
+                    $headerTitlePart = strtoupper($getReqTitle[0]);
 
                     //echo "<pre style='display:none;'>"; print_r($arResult['DETAIL_PAGE_URL']); echo "</pre>";
 
@@ -426,6 +427,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                         </div>
                     </div>
                     <div class="table sku-items">
+                   
                         <?
                         $getSku = CIBlockElement::GetList(
                             array('PROPERTY_PRICE_'.strtoupper(LANGUAGE_ID).'_VALUE' => 'ASC'),
@@ -436,8 +438,10 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                         );
 
                         $getItemsReq = explode(';', $_REQUEST['item']);
-
+                        //debug($getItemsReq);
                         while ($fetchList = $getSku->GetNext()) {
+                            
+                            //debug($fetchList);
                             if($_REQUEST['item'] == 'all-flats' || !isset($_REQUEST['item'])){
                                 $arrAdd[] = $fetchList['ID'];
                             }else{
@@ -454,7 +458,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                         $arrAdd[] = $fetchList['ID'];
                                     }
                                     else if( 
-                                        ( stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('bed', 'комн', $valueReq)) || stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('Study', 'Студия', $valueReq)) )
+                                        ( stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('bed', 'комн', $valueReq)) || stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('studios', 'Студия', $valueReq)) )
                                             && isset($valueReq) && $valueReq != '4-bed' && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('bed', 'комн', '1'.$valueReq)) )
                                         {
                                             $arrAdd[] = $fetchList['ID'];
@@ -481,7 +485,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                 }
                             }
                         }
-
+                        
                         if(!is_array($arrAdd)){
                             /*$getSku = CIBlockElement::GetList(
                                 array('PROPERTY_PRICE_'.strtoupper(LANGUAGE_ID).'_VALUE' => 'ASC'),
@@ -1150,6 +1154,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                     ?>
                                 </div>
                             </div>
+                            
                             <?
                             $getSku = CIBlockElement::GetList(
                                 array('SORT' => 'ASC'),
@@ -1157,18 +1162,38 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                 false,
                                 false,
                                 array('ID', 'NAME', 'IBLOCK_SECTION_ID', 'PROPERTY_CML2_LINK', 'PROPERTY_FLAT_TYPE', 'PROPERTY_PRICE_RU', 'PROPERTY_PRICE_EN', 
-                                    'PROEPRTY_NAME_'.strtoupper(LANGUAGE_ID), 'PROPERTY_PRICE_PER_SQFT_RU', 'PROPERTY_PRICE_PER_SQFT_EN', 'PROPERTY_SQUARE_AREA' )
+                                    'PROEPRTY_NAME_'.strtoupper(LANGUAGE_ID), 'PROPERTY_PRICE_PER_SQFT_RU', 'PROPERTY_PRICE_PER_SQFT_EN', 'PROPERTY_SQUARE_AREA', 'PROPERTY_BEDS_EN')
                             );
                             while($fetchSku = $getSku -> Fetch()){
-
+                                
+                                //debug($fetchSku);
                                 if(LANGUAGE_ID == 'en'){
+                                    //debug($fetchSku);
                                     $nameSku = $fetchSku['NAME'];
+                                    //debug(strpos($fetchSku['PROPERTY_FLAT_TYPE_VALUE'], 'Студия'));
+                                    if(strpos($fetchSku['PROPERTY_FLAT_TYPE_VALUE'], 'Свободная планировка') !== false || strpos($fetchSku['PROPERTY_FLAT_TYPE_VALUE'], 'Студия') !== false)
+                                    {
+                                        $fetchSku['PROPERTY_FLAT_TYPE_VALUE_NAME_ROW'] = str_replace('Свободная планировка', 'Free Layout', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
+                                        $fetchSku['PROPERTY_FLAT_TYPE_VALUE_NAME_ROW'] = str_replace('Студия', 'Studios', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
+                                    }
+                                    else {
+                                        $fetchSku['PROPERTY_FLAT_TYPE_VALUE_NAME_ROW'] = $fetchSku['PROPERTY_BEDS_EN_VALUE'].'-bed';
+                                    }
                                     $fetchSku['PROPERTY_FLAT_TYPE_VALUE'] = str_replace('Свободная планировка', 'Free Layout', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
                                     $fetchSku['PROPERTY_FLAT_TYPE_VALUE'] = str_replace('комнатная квартира', 'bed', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
                                     $fetchSku['PROPERTY_FLAT_TYPE_VALUE'] = str_replace('комн', 'bed', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
                                     $fetchSku['PROPERTY_FLAT_TYPE_VALUE'] = str_replace('Студия', 'Studios', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
+                                    /*$fetchSku['PROPERTY_FLAT_TYPE_VALUE_FOR_URL'] = str_replace('Свободная планировка', 'Free Layout', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
+                                    $fetchSku['PROPERTY_FLAT_TYPE_VALUE_FOR_URL'] = str_replace('комнатная квартира', 'bed', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
+                                    $fetchSku['PROPERTY_FLAT_TYPE_VALUE_FOR_URL'] = str_replace('комн', 'bed', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);
+                                    $fetchSku['PROPERTY_FLAT_TYPE_VALUE_FOR_URL'] = str_replace('Студия', 'Studios', $fetchSku['PROPERTY_FLAT_TYPE_VALUE']);*/
+                                    
+                                    
+                                    
                                 }else{
                                     $nameSku = $fetchSku['PROEPRTY_NAME_'.strtoupper(LANGUAGE_ID)];
+                                    $fetchSku['PROPERTY_FLAT_TYPE_VALUE_NAME_ROW'] = $fetchSku['PROPERTY_FLAT_TYPE_VALUE'];
+                                    //$fetchSku['PROPERTY_FLAT_TYPE_VALUE_FOR_URL'] = $fetchSku['PROPERTY_FLAT_TYPE_VALUE'];
                                 }
 
                                 $fetchSku['PROPERTY_PRICE_PER_SQFT_RU_VALUE'] = str_replace(',', '.', $fetchSku['PROPERTY_PRICE_PER_SQFT_RU_VALUE']);
@@ -1231,12 +1256,14 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
 
                                 $arrResFlats[$fetchSku['PROPERTY_FLAT_TYPE_VALUE']][] = array( 
                                     'NAME' => $nameSku, 
-                                    'FLAT_TYPE' => $fetchSku['PROPERTY_FLAT_TYPE_VALUE'], 
+                                    'FLAT_TYPE' => $fetchSku['PROPERTY_FLAT_TYPE_VALUE'],
+                                    'FLAT_TYPE_VALUE_NAME_ROW' => $fetchSku['PROPERTY_FLAT_TYPE_VALUE_NAME_ROW'], 
                                     'PRICE' => array( 'VALUE' => $priceSKU['VAL'], 'CURRENCY' => $priceSKU['CURRENCY'] ),
                                     'PRICE_FOR_AREA' => array( 'VALUE' => $priceSKUArea['VAL'], 'CURRENCY' => $priceSKUArea['CURRENCY'] ),
                                     'SQUARE_AREA' => $squareArea
                                 );
                             }
+                            //debug($arrResFlats);
                             //echo '<pre>'; print_r($arrResFlats); echo '</pre>';
                             if(is_array($arrResFlats)){
                                 ?>
@@ -1289,11 +1316,11 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                         ?>
                                         <tr class="sku-item">
                                             <td>
-                                            <div class="table-content-full-size"><?echo $minFlat['FLAT_TYPE'];?></div>
+                                            <div class="table-content-full-size"><?echo $minFlat['FLAT_TYPE_VALUE_NAME_ROW'];?></div>
                                             <div class="table-content-mobile-size"><?
                                             $search = array('-комнатная квартира','-bed', 'Студия', 'Studios');
                                             $replace = array('','','Ст.', 'St.');
-                                            echo str_replace($search, $replace, $minFlat['FLAT_TYPE']);?>
+                                            echo str_replace($search, $replace, $minFlat['FLAT_TYPE_VALUE_NAME_ROW']);?>
                                             </div>
                                             </td>
                                             <td>
@@ -1361,7 +1388,13 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                                     $minFlat['FLAT_TYPE'] = str_replace('комн', 'bed', $minFlat['FLAT_TYPE']);
                                                     $minFlat['FLAT_TYPE'] = str_replace('Студия', 'studios', $minFlat['FLAT_TYPE']);
                                                     //echo $minFlat['FLAT_TYPE'];
-                                                    $url_more = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH).'?sku-preview=Y'.'&item='.strtolower($minFlat['FLAT_TYPE']);
+                                                    
+                                                    $minFlat['FLAT_TYPE_VALUE_NAME_ROW'] = str_replace('Свободная планировка', 'Free Layout', $minFlat['FLAT_TYPE_VALUE_NAME_ROW']);
+                                                    $minFlat['FLAT_TYPE_VALUE_NAME_ROW'] = str_replace('комнатная квартира', 'bed', $minFlat['FLAT_TYPE_VALUE_NAME_ROW']);
+                                                    $minFlat['FLAT_TYPE_VALUE_NAME_ROW'] = str_replace('комн', 'bed', $minFlat['FLAT_TYPE_VALUE_NAME_ROW']);
+                                                    $minFlat['FLAT_TYPE_VALUE_NAME_ROW'] = str_replace('Студия', 'studios', $minFlat['FLAT_TYPE_VALUE_NAME_ROW']);
+                                                    
+                                                    $url_more = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH).'?sku-preview=Y'.'&item='.strtolower($minFlat['FLAT_TYPE']).'&title='.strtolower($minFlat['FLAT_TYPE_VALUE_NAME_ROW']);
                                                     echo "<a class=\"table-content-full-size\" href=\"".$url_more."\">".GetMessage('MORE_FS').'</a>';
                                                     echo "<a class=\"table-content-mobile-size\" href=\"".$url_more."\">".GetMessage('MORE_MS').'</a>';
                                                     //echo "<div class=\"table-content-full-size\">"."<a href=\"".$url_more."\">".GetMessage('MORE_FS').'</a>'.'</div>';
