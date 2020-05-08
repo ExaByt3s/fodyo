@@ -28,7 +28,7 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              Первоначальный взнос, %
         </div>
-        <div class="column">
+        <div class="columnWithButton">
              Заявка на получение кредита
         </div>
     </div>
@@ -42,10 +42,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              15,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Сбербанк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="sberbank" data-bank="Сбербанк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_sberbank" onchange="funcOnchangeCheckboxInBank('sberbank')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_sberbank" onchange="funcOnchangeCheckboxInBank('sberbank')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -58,10 +72,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              10,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Альфа Банк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="alfa" data-bank="Альфа Банк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_alfa" onchange="funcOnchangeCheckboxInBank('alfa')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_alfa" onchange="funcOnchangeCheckboxInBank('alfa')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -74,10 +102,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              20,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Абсолют Банк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="absolutbank" data-bank="Абсолют Банк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_absolutbank" onchange="funcOnchangeCheckboxInBank('absolutbank')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_absolutbank" onchange="funcOnchangeCheckboxInBank('absolutbank')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -90,10 +132,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              10,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Банк Возрождение">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="vozrojdenie" data-bank="Банк Возрождение">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_vozrojdenie" onchange="funcOnchangeCheckboxInBank('vozrojdenie')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_vozrojdenie" onchange="funcOnchangeCheckboxInBank('vozrojdenie')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -106,10 +162,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              10,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="ВТБ">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="vtb" data-bank="ВТБ">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_vtb" onchange="funcOnchangeCheckboxInBank('vtb')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_vtb" onchange="funcOnchangeCheckboxInBank('vtb')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -122,10 +192,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              15,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Банк Дом">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="dom" data-bank="Банк Дом">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_dom" onchange="funcOnchangeCheckboxInBank('dom')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_dom" onchange="funcOnchangeCheckboxInBank('dom')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -138,10 +222,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              15,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Райффайзенбанк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="raifaizen" data-bank="Райффайзенбанк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_raifaizen" onchange="funcOnchangeCheckboxInBank('raifaizen')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_raifaizen" onchange="funcOnchangeCheckboxInBank('raifaizen')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -154,10 +252,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              20,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Открытие Банк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="otkritie" data-bank="Открытие Банк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_otkritie" onchange="funcOnchangeCheckboxInBank('otkritie')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_otkritie" onchange="funcOnchangeCheckboxInBank('otkritie')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -170,10 +282,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              15,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="СвязьБанк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="svjaz" data-bank="СвязьБанк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_svjaz" onchange="funcOnchangeCheckboxInBank('svjaz')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_svjaz" onchange="funcOnchangeCheckboxInBank('svjaz')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -186,10 +312,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              0,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Сургутнефтегазбанк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="surgut" data-bank="Сургутнефтегазбанк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_surgut" onchange="funcOnchangeCheckboxInBank('surgut')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_surgut" onchange="funcOnchangeCheckboxInBank('surgut')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -202,10 +342,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              10,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Совкомбанк">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="sovkom" data-bank="Совкомбанк">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_sovkom" onchange="funcOnchangeCheckboxInBank('sovkom')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_sovkom" onchange="funcOnchangeCheckboxInBank('sovkom')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
     <div class="row row-item">
@@ -218,10 +372,24 @@ $APPLICATION->SetTitle("Mortgage");
         <div class="column">
              15,00 %
         </div>
-        <div class="column">
-            <div class="button-column form-bank" data-bank="Росбанк Дом">
+        <div class="columnWithButton">
+            <div class="button-column form-bank" id="rosbank" data-bank="Росбанк Дом">
                  Оставить заявку
             </div>
+            <div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_rosbank" onchange="funcOnchangeCheckboxInBank('rosbank')">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_rosbank" onchange="funcOnchangeCheckboxInBank('rosbank')">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
@@ -241,4 +409,5 @@ $APPLICATION->SetTitle("Mortgage");
  <br>
  </li>
 </ul>
-     <script> var widgetOptions46362 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"); a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=46362&t="+Math.floor(new Date()/1800000); document.getElementsByTagName("head")[0].appendChild(a) })();</script><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+     <script> var widgetOptions46362 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"); a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=46362&t="+Math.floor(new Date()/1800000); document.getElementsByTagName("head")[0].appendChild(a) })();
+     </script><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

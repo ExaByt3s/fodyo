@@ -19,7 +19,7 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 Down payment
 		</div>
-		<div class="column">
+		<div class="columnWithButton">
 		</div>
 	</div>
 	<div class="row row-item">
@@ -32,10 +32,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Well Fargo">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Well Fargo" id="WF">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_WF" onchange="funcOnchangeCheckboxInBank('WF')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_WF" onchange="funcOnchangeCheckboxInBank('WF')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -48,10 +62,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Bank of America">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Bank of America" id="BoA">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_BoA" onchange="funcOnchangeCheckboxInBank('BoA')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_BoA" onchange="funcOnchangeCheckboxInBank('BoA')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -64,10 +92,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Chase">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Chase" id="Chase">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Chase" onchange="funcOnchangeCheckboxInBank('Chase')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Chase" onchange="funcOnchangeCheckboxInBank('Chase')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -80,10 +122,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Citibank">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Citibank" id="Citibank">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Citibank" onchange="funcOnchangeCheckboxInBank('Citibank')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Citibank" onchange="funcOnchangeCheckboxInBank('Citibank')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -96,10 +152,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Blueleaf Lending">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Blueleaf Lending" id="Blueleaf">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Blueleaf" onchange="funcOnchangeCheckboxInBank('Blueleaf')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Blueleaf" onchange="funcOnchangeCheckboxInBank('Blueleaf')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -112,10 +182,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Eclick Lending">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Eclick Lending" id="Eclick">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Eclick" onchange="funcOnchangeCheckboxInBank('Eclick')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Eclick" onchange="funcOnchangeCheckboxInBank('Eclick')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -128,10 +212,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Fairway">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Fairway" id="Fairway">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Fairway" onchange="funcOnchangeCheckboxInBank('Fairway')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Fairway" onchange="funcOnchangeCheckboxInBank('Fairway')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -144,10 +242,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Federal Savings Bank">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Federal Savings Bank" id="Federal">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Federal" onchange="funcOnchangeCheckboxInBank('Federal')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Federal" onchange="funcOnchangeCheckboxInBank('Federal')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -160,10 +272,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="United Home Loans">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="United Home Loans" id="United">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_United" onchange="funcOnchangeCheckboxInBank('United')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_United" onchange="funcOnchangeCheckboxInBank('United')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -176,10 +302,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Guaranteed Rate">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Guaranteed Rate" id="Guaranteed">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Guaranteed" onchange="funcOnchangeCheckboxInBank('Guaranteed')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Guaranteed" onchange="funcOnchangeCheckboxInBank('Guaranteed')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 	<div class="row row-item">
@@ -192,10 +332,24 @@ $APPLICATION->SetTitle("Mortgage");
 		<div class="column">
 			 5,00 %
 		</div>
-		<div class="column">
-			<div class="button-column form-bank" data-bank="Homestar">
+		<div class="columnWithButton">
+			<div class="button-column form-bank" data-bank="Homestar" id="Homestar">
 				 Request Quote
 			</div>
+			<div class="checkboxAgrementBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckbox_Homestar" onchange="funcOnchangeCheckboxInBank('Homestar')">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInBank">
+                    <input type="checkbox" class="checkboxAgreement" id="idCheckboxPolicy_Homestar" onchange="funcOnchangeCheckboxInBank('Homestar')">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 		</div>
 	</div>
 </div>

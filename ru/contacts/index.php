@@ -27,10 +27,20 @@ $APPLICATION->setTitle("Контакты");
 		<div class="form-cons-submit form-submit" id="contact-form-submit">
 			 Оставить заявку
 		</div>
-		<div class="black">
-			Отправляя форму, вы подтверждаете своё
-		    <a href="/agreement/" class="agreement-link" target="_blank">согласие на обработку персональных данных</a>
-	    </div>
+		<div class="checkboxAgrementBlockInContact">
+                    <input type="checkbox" id="idCheckboxInContact" onchange="funcOnchangeCheckboxInContact()">
+                    <div class="agreement black">
+                        Ознакомлен с 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">Политикой конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInContact">
+                    <input type="checkbox" id="idCheckboxPolicyInContact" onchange="funcOnchangeCheckboxInContact()">
+                    <div class="agreement black">
+                        Согласен на обработку 
+                        <a href="/ru/policy/" class="agreement-link" target="_blank">персональных данных</a>
+                    </div>
+                </div>
 	</div>
 </div>
  <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
