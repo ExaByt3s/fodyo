@@ -8,12 +8,28 @@ $arUrlRewrite=array (
     'PATH' => '/en-ru/cottage/index.php',
     'SORT' => 100,
   ),
-  142 => 
+  83 => 
   array (
-    'CONDITION' => '#^/ru-de/single-family-homes/#',
+    'CONDITION' => '#^/ru-ru/single-family-homes/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-de/cottage/index.php',
+    'PATH' => '/ru-ru/cottage/index.php',
+    'SORT' => 100,
+  ),
+  84 => 
+  array (
+    'CONDITION' => '#^/ru-us/single-family-homes/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-us/cottage/index.php',
+    'SORT' => 100,
+  ),
+  80 => 
+  array (
+    'CONDITION' => '#^/en-us/single-family-homes/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/en-us/cottage/index.php',
     'SORT' => 100,
   ),
   136 => 
@@ -40,22 +56,6 @@ $arUrlRewrite=array (
     'PATH' => '/ru-fr/cottage/index.php',
     'SORT' => 100,
   ),
-  132 => 
-  array (
-    'CONDITION' => '#^/en-es/single-family-homes/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/en-es/single-family-homes/index.php',
-    'SORT' => 100,
-  ),
-  83 => 
-  array (
-    'CONDITION' => '#^/ru-ru/single-family-homes/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-ru/cottage/index.php',
-    'SORT' => 100,
-  ),
   127 => 
   array (
     'CONDITION' => '#^/en-au/single-family-homes/#',
@@ -64,36 +64,12 @@ $arUrlRewrite=array (
     'PATH' => '/en-au/cottage/index.php',
     'SORT' => 100,
   ),
-  128 => 
+  132 => 
   array (
-    'CONDITION' => '#^/en-ca/single-family-homes/#',
+    'CONDITION' => '#^/en-es/single-family-homes/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-ca/cottage/index.php',
-    'SORT' => 100,
-  ),
-  80 => 
-  array (
-    'CONDITION' => '#^/en-us/single-family-homes/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/en-us/cottage/index.php',
-    'SORT' => 100,
-  ),
-  130 => 
-  array (
-    'CONDITION' => '#^/en-de/single-family-homes/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/en-de/cottage/index.php',
-    'SORT' => 100,
-  ),
-  84 => 
-  array (
-    'CONDITION' => '#^/ru-us/single-family-homes/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-us/cottage/index.php',
+    'PATH' => '/en-es/single-family-homes/index.php',
     'SORT' => 100,
   ),
   140 => 
@@ -102,6 +78,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/ru-ca/cottage/index.php',
+    'SORT' => 100,
+  ),
+  130 => 
+  array (
+    'CONDITION' => '#^/en-de/single-family-homes/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/en-de/cottage/index.php',
     'SORT' => 100,
   ),
   134 => 
@@ -128,12 +112,44 @@ $arUrlRewrite=array (
     'PATH' => '/ru-au/cottage/index.php',
     'SORT' => 100,
   ),
+  142 => 
+  array (
+    'CONDITION' => '#^/ru-de/single-family-homes/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-de/cottage/index.php',
+    'SORT' => 100,
+  ),
+  128 => 
+  array (
+    'CONDITION' => '#^/en-ca/single-family-homes/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/en-ca/cottage/index.php',
+    'SORT' => 100,
+  ),
   2 => 
   array (
     'CONDITION' => '#^/bitrix/services/ymarket/#',
     'RULE' => '',
     'ID' => '',
     'PATH' => '/bitrix/services/ymarket/index.php',
+    'SORT' => 100,
+  ),
+  114 => 
+  array (
+    'CONDITION' => '#^/ru-ca/developments/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-ca/developments/index.php',
+    'SORT' => 100,
+  ),
+  121 => 
+  array (
+    'CONDITION' => '#^/ru-uk/developments/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-uk/developments/index.php',
     'SORT' => 100,
   ),
   122 => 
@@ -152,22 +168,6 @@ $arUrlRewrite=array (
     'PATH' => '/en-es/developments/index.php',
     'SORT' => 100,
   ),
-  117 => 
-  array (
-    'CONDITION' => '#^/en-uk/developments/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/en-uk/developments/index.php',
-    'SORT' => 100,
-  ),
-  114 => 
-  array (
-    'CONDITION' => '#^/ru-ca/developments/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-ca/developments/index.php',
-    'SORT' => 100,
-  ),
   118 => 
   array (
     'CONDITION' => '#^/en-au/developments/#',
@@ -184,12 +184,12 @@ $arUrlRewrite=array (
     'PATH' => '/en-us/developments/index.php',
     'SORT' => 100,
   ),
-  121 => 
+  117 => 
   array (
-    'CONDITION' => '#^/ru-uk/developments/#',
+    'CONDITION' => '#^/en-uk/developments/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-uk/developments/index.php',
+    'PATH' => '/en-uk/developments/index.php',
     'SORT' => 100,
   ),
   120 => 
@@ -200,14 +200,6 @@ $arUrlRewrite=array (
     'PATH' => '/en-fr/developments/index.php',
     'SORT' => 100,
   ),
-  116 => 
-  array (
-    'CONDITION' => '#^/en-de/developments/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/en-de/developments/index.php',
-    'SORT' => 100,
-  ),
   104 => 
   array (
     'CONDITION' => '#^/en-ru/developments/#',
@@ -216,20 +208,28 @@ $arUrlRewrite=array (
     'PATH' => '/en-ru/developments/index.php',
     'SORT' => 100,
   ),
-  125 => 
+  116 => 
   array (
-    'CONDITION' => '#^/ru-fr/developments/#',
+    'CONDITION' => '#^/en-de/developments/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-fr/developments/index.php',
+    'PATH' => '/en-de/developments/index.php',
     'SORT' => 100,
   ),
-  113 => 
+  123 => 
   array (
-    'CONDITION' => '#^/en-ca/developments/#',
+    'CONDITION' => '#^/ru-de/developments/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-ca/developments/index.php',
+    'PATH' => '/ru-de/developments/index.php',
+    'SORT' => 100,
+  ),
+  151 => 
+  array (
+    'CONDITION' => '#^/ru-ru/developments/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-ru/developments/index.php',
     'SORT' => 100,
   ),
   124 => 
@@ -240,14 +240,6 @@ $arUrlRewrite=array (
     'PATH' => '/ru-es/developments/index.php',
     'SORT' => 100,
   ),
-  107 => 
-  array (
-    'CONDITION' => '#^/ru-ru/developments/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-ru/developments/index.php',
-    'SORT' => 100,
-  ),
   108 => 
   array (
     'CONDITION' => '#^/ru-us/developments/#',
@@ -256,12 +248,36 @@ $arUrlRewrite=array (
     'PATH' => '/ru-us/developments/index.php',
     'SORT' => 100,
   ),
-  123 => 
+  113 => 
   array (
-    'CONDITION' => '#^/ru-de/developments/#',
+    'CONDITION' => '#^/en-ca/developments/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-de/developments/index.php',
+    'PATH' => '/en-ca/developments/index.php',
+    'SORT' => 100,
+  ),
+  125 => 
+  array (
+    'CONDITION' => '#^/ru-fr/developments/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-fr/developments/index.php',
+    'SORT' => 100,
+  ),
+  97 => 
+  array (
+    'CONDITION' => '#^/ru-us/condos/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/ru-us/condos/index.php',
+    'SORT' => 100,
+  ),
+  126 => 
+  array (
+    'CONDITION' => '#^/en-au/condos/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/en-au/condos/index.php',
     'SORT' => 100,
   ),
   145 => 
@@ -280,22 +296,6 @@ $arUrlRewrite=array (
     'PATH' => '/ru-es/condos/index.php',
     'SORT' => 100,
   ),
-  141 => 
-  array (
-    'CONDITION' => '#^/ru-de/condos/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-de/condos/index.php',
-    'SORT' => 100,
-  ),
-  139 => 
-  array (
-    'CONDITION' => '#^/ru-ca/condos/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-ca/condos/index.php',
-    'SORT' => 100,
-  ),
   137 => 
   array (
     'CONDITION' => '#^/ru-au/condos/#',
@@ -304,28 +304,28 @@ $arUrlRewrite=array (
     'PATH' => '/en-au/condos/index.php',
     'SORT' => 100,
   ),
-  99 => 
+  141 => 
   array (
-    'CONDITION' => '#^/en-ru/condos/#',
+    'CONDITION' => '#^/ru-de/condos/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-ru/condos/index.php',
+    'PATH' => '/ru-de/condos/index.php',
     'SORT' => 100,
   ),
-  126 => 
+  133 => 
   array (
-    'CONDITION' => '#^/en-au/condos/#',
+    'CONDITION' => '#^/en-fr/condos/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-au/condos/index.php',
+    'PATH' => '/en-fr/condos/index.php',
     'SORT' => 100,
   ),
-  97 => 
+  131 => 
   array (
-    'CONDITION' => '#^/ru-us/condos/#',
+    'CONDITION' => '#^/en-es/condos/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-us/condos/index.php',
+    'PATH' => '/en-es/condos/index.php',
     'SORT' => 100,
   ),
   129 => 
@@ -344,12 +344,12 @@ $arUrlRewrite=array (
     'PATH' => '/en-ca/condos/index.php',
     'SORT' => 100,
   ),
-  131 => 
+  139 => 
   array (
-    'CONDITION' => '#^/en-es/condos/#',
+    'CONDITION' => '#^/ru-ca/condos/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-es/condos/index.php',
+    'PATH' => '/ru-ca/condos/index.php',
     'SORT' => 100,
   ),
   106 => 
@@ -360,12 +360,12 @@ $arUrlRewrite=array (
     'PATH' => '/en-us/condos/index.php',
     'SORT' => 100,
   ),
-  133 => 
+  99 => 
   array (
-    'CONDITION' => '#^/en-fr/condos/#',
+    'CONDITION' => '#^/en-ru/condos/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-fr/condos/index.php',
+    'PATH' => '/en-ru/condos/index.php',
     'SORT' => 100,
   ),
   98 => 

@@ -13,6 +13,8 @@ use \Bitrix\Main\Localization\Loc;
  * @var string $templateFolder
  */
 
+
+
 $this->setFrameMode(true);
 $this->addExternalCss('/bitrix/css/main/bootstrap.css');
 
@@ -148,6 +150,7 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
     }
 }
 ?>
+<link rel="stylesheet" type="text/css" href="/develop/bitrix/templates/23/components/bitrix/catalog.element/.default/style.css" />
 <?php
                                 $nameValuta = "";
                                 $inlineNameValuta = "";
@@ -178,8 +181,9 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
                                     }
                                     ?>
 <?
-    $APPLICATION->SetAdditionalCSS("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.css");
-    $APPLICATION->AddHeadScript("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.js");
+$APPLICATION->SetAdditionalCSS("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.css");
+$APPLICATION->SetAdditionalCSS("/bitrix/templates/23/components/bitrix/catalog.element/.default/styleTabbar.css");
+$APPLICATION->AddHeadScript("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.js");
 ?>
 <div class="breadcrumbs">
     <?$APPLICATION->IncludeComponent(
@@ -1267,6 +1271,132 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                             //echo '<pre>'; print_r($arrResFlats); echo '</pre>';
                             if(is_array($arrResFlats)){
                                 ?>
+                                
+                                <div class="tabs">
+  
+                              <input type="radio" id="tab1" name="tab-control" checked>
+                              <input type="radio" id="tab2" name="tab-control">
+                              <input type="radio" id="tab3" name="tab-control">
+                              <input type="radio" id="tab4" name="tab-control">
+                              <input type="radio" id="tab5" name="tab-control">
+                              <input type="radio" id="tab6" name="tab-control">
+                              <ul>
+                                <li title="Features"><label for="tab1" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('STUDIO_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('STUDIO_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Delivery Contents"><label for="tab2" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('1_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('1_ROOM_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Shipping"><label for="tab3" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('2_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('2_ROOM_TEXT_MS')?></div>
+                                </span></label></li>    
+                                <li title="Returns"><label for="tab4" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('3_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('3_ROOM_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Returns"><label for="tab5" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('4+_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('4+_ROOM_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Returns"><label for="tab6" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('FREE_PLAN_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('FREE_PLAN_TEXT_MS')?></div>
+                                </span></label></li>
+                              </ul>
+                              
+                              <div class="slider"><div class="indicator"></div></div>
+                              <div class="content">
+                              <?php 
+                              
+                              $getSku = CIBlockElement::GetList(
+                                  array('PROPERTY_PRICE_'.strtoupper(LANGUAGE_ID).'_VALUE' => 'ASC'),
+                                  array('PROPERTY_CML2_LINK' => $arResult['ID'], 'IBLOCK_ID' => 8),
+                                  false,
+                                  false,
+                                  array('ID', 'NAME', 'IBLOCK_SECTION_ID', 'PROPERTY_CML2_LINK', 'PROPERTY_FLAT_TYPE', 'PROPERTY_PRICE_'.strtoupper(LANGUAGE_ID))
+                                  );
+                              
+                              $getItemsReq = explode(';', $_REQUEST['item']);
+                              //debug($getItemsReq);
+                              while ($fetchList = $getSku->GetNext()) 
+                              {
+                                  echo "<pre>"; print_r($fetchList); echo "</pre>";
+                                  //debug($fetchList);
+                                 /* if($_REQUEST['item'] == 'all-flats' || !isset($_REQUEST['item'])){
+                                      $arrAdd[] = $fetchList['ID'];
+                                  }else{
+                                      foreach ($getItemsReq as $key2 => $valueReq) {
+                                          $fetchList['PROPERTY_FLAT_TYPE_VALUE'] = str_replace('Свободная планировка', 'Free Layout', $fetchList['PROPERTY_FLAT_TYPE_VALUE']);
+                                          if( isset($valueReq) &&
+                                              ($valueReq == strtolower(str_replace('комн', 'bed', $fetchList['PROPERTY_FLAT_TYPE_VALUE'])) || $valueReq == strtolower(str_replace('Студия', 'study', $fetchList['PROPERTY_FLAT_TYPE_VALUE'])))
+                                              && $valueReq != 'all-flats' && $valueReq != '4-bed')
+                                          {
+                                              $arrAdd[] = $fetchList['ID'];
+                                          }
+                                          else if(stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], $valueReq) && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '1'.$valueReq) && isset($valueReq) && $valueReq != '4-bed')
+                                          {
+                                              $arrAdd[] = $fetchList['ID'];
+                                          }
+                                          else if(
+                                              ( stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('bed', 'комн', $valueReq)) || stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('studios', 'Студия', $valueReq)) )
+                                              && isset($valueReq) && $valueReq != '4-bed' && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], str_replace('bed', 'комн', '1'.$valueReq)) )
+                                          {
+                                              $arrAdd[] = $fetchList['ID'];
+                                              
+                                          }
+                                          else if($valueReq == '4-bed'){
+                                              if(isset($valueReq)
+                                                  && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '1-комн')
+                                                  && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '2-комн')
+                                                  && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '3-комн')
+                                                  && !stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], 'Студия')
+                                                  ){
+                                                      $arrAdd[] = $fetchList['ID'];
+                                              }else{
+                                                  if(
+                                                      stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '11')
+                                                      || stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '12')
+                                                      || stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '13')
+                                                      ){
+                                                          $arrAdd[] = $fetchList['ID'];
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }*/
+                              }
+                              
+                              ?>
+                                <section>
+                                  1
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?
+                                </section>
+                                <section>
+                                  2
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut voluptatibus ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
+                                </section>
+                                <section>
+                                  3
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+                                </section>
+                                <section>
+                                  4
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
+                                </section>
+                                <section>
+                                  4
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
+                                </section>
+                                <section>
+                                  4
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
+                                </section>
+                              </div>
+                            </div>
+                                
                                 
                                 <table class="SKU-items">
                                     <thead>

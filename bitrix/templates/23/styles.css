@@ -1948,7 +1948,7 @@ a.more-button {
     flex-direction: column
 }
 
-.table-banks .row .columnWithButton {
+/*.table-banks .row .columnWithButton {
     width: 30%;
     border-bottom: 1px solid black;
     padding: 10px;
@@ -1956,7 +1956,7 @@ a.more-button {
     justify-content: center;
     align-items: left;
     flex-direction: column
-}
+}*/
 
 .table-banks img {
     max-height: 100%;
@@ -1967,7 +1967,7 @@ a.more-button {
     width: 25%
 }*/
 
-.table-banks .row .columnWithButton .button-column {
+.table-banks .row .column .button-column {
     border: unset;
     background: linear-gradient(0deg, rgba(219, 68, 37, 1) 0%, rgba(227, 97, 53, 1) 57%);
     width: 190px;
@@ -1981,7 +1981,7 @@ a.more-button {
     align-self: center
 }
 
-.table-banks .row .columnWithButton .button-column:hover {
+.table-banks .row .column .button-column:hover {
     background: linear-gradient(0deg, rgba(227, 97, 53, 1) 0%, rgba(219, 68, 37, 1) 57%)
 }
 

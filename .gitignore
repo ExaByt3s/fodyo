@@ -19,3 +19,4 @@ bitrix/.settings.php
 upload.tar.gz
 /bitrix/error_log
 log.txt
+*.xml

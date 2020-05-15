@@ -223,8 +223,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"SHOW_DEACTIVATED" => "N",
 		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
 		),
-		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => array(
-		),
+		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => "",
 		"DETAIL_BLOG_URL" => "catalog_comments",
 		"DETAIL_BLOG_EMAIL_NOTIFY" => "N",
 		"DETAIL_FB_APP_ID" => "",

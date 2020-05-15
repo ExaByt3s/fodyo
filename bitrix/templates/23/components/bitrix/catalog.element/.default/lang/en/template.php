@@ -125,4 +125,21 @@ $MESS['SENDING_TEXT2'] = 'I have read and accept the ';
 $MESS['AGREEMENT_TEXT2'] = 'Terms of use';
 $MESS['HREF_AGREEMENT'] = '/agreement/';
 $MESS['HREF_POLICY'] = '/policy/';
+
+
+$MESS['STUDIO_TEXT_FS'] = 'Studio';
+$MESS['1_ROOM_TEXT_FS'] = '0 beds';
+$MESS['2_ROOM_TEXT_FS'] = '1 beds';
+$MESS['3_ROOM_TEXT_FS'] = '2 beds';
+$MESS['4+_ROOM_TEXT_FS'] = '3+ beds';
+$MESS['FREE_PLAN_TEXT_FS'] = 'Free layout';
+
+$MESS['STUDIO_TEXT_MS'] = 'St.';
+$MESS['1_ROOM_TEXT_MS'] = '0 b.';
+$MESS['2_ROOM_TEXT_MS'] = '1 b.';
+$MESS['3_ROOM_TEXT_MS'] = '2 b.';
+$MESS['4+_ROOM_TEXT_MS'] = '3+ b.';
+$MESS['FREE_PLAN_TEXT_MS'] = 'FL';
+
+
 ?>

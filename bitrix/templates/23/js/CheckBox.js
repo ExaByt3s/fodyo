@@ -37,12 +37,15 @@ function funcOnchangeCheckboxInContact(){
 $(document).ready(function(){
 	document.getElementById("contact-form-submit").style["background"] = "#585858";
 	document.getElementById("contact-form-submit").style["pointer-events"] = "none";
+});
+
+$(document).ready(function(){
 	document.getElementById("hrefButtonPopupForm").style["background"] = "#585858";
 	document.getElementById("hrefButtonPopupForm").style["pointer-events"] = "none";
 });
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 	document.getElementById("sberbank").style["background"] = "#585858";
 	document.getElementById("sberbank").style["pointer-events"] = "none";
 	
@@ -126,4 +129,4 @@ function funcOnchangeCheckboxInBank(str){
 		document.getElementById(str).style["background"] = "#585858";
 		document.getElementById(str).style["pointer-events"] = "none";
 	}
-}
+}*/
