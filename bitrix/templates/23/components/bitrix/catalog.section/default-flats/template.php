@@ -790,7 +790,7 @@ if(LANGUAGE_ID == 'en'){
         $APPLICATION->setTitle( 'Apartments in '. $arResult['TEST']['NAME']);
     }elseif(stristr($APPLICATION->GetCurDir(), 'developments')){
 
-        $APPLICATION->SetPageProperty("title", 'Buy an apartment in a developments in '. $arResult['NAME'] .', 🏢 apartments for sale in a developments in '. $arResult['NAME'] .'- Fodyo.com portal');
+        $APPLICATION->SetPageProperty("title", 'Buy an apartment in developments in '. $arResult['NAME'] .', 🏢 apartments for sale in a developments in '. $arResult['NAME'] .'- Fodyo.com portal');
 
         $APPLICATION->SetPageProperty("description", 'A complete collection of all developments in '. $arResult['NAME'] .' at a low price. The 👉🏻 Fodyo.com 👈🏻 portal is useful for those who are interested in information on developments in '. $arResult['NAME'] .'. Here are developments in '. $arResult['NAME'] .' for sale on favorable terms. ✅');
 
