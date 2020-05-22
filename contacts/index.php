@@ -5,6 +5,15 @@ $APPLICATION->setTitle("Contacts");
 ?><div class="block-title">
 	<h1>Contacts</h1>
 </div>
+<b>N</b><b>ew York, USA</b><br>
+<br>
+ 100 Church Street, &nbsp;<br>
+ New York,&nbsp;NY 10007 <br>
+<br>
+<b>Moscow, Russia</b><br>
+<br>
+17 Khalturinskaya Street,<br>
+Moscow, 107392<br>
 <div class="cat-info-block contacts-block" style="margin: 20px 0;">
 	<div class="line" style="margin-bottom:20px;">
 		 Fodyo.com
@@ -23,15 +32,14 @@ $APPLICATION->setTitle("Contacts");
 	<div class="form-cons">
  <input type="text" name="name" placeholder="Write your name"> <input type="text" name="phone" placeholder="Write your phone"> <textarea placeholder="Write your message"></textarea>
 		<div class="flex-captcha">
- 			<img src="/bitrix/templates/23/ajax/captcha.php" class="captchaImg" title="Reload"> <input type="text" name="captcha" placeholder="Text from image">
+ <img src="/bitrix/templates/23/ajax/captcha.php" class="captchaImg" title="Reload"> <input type="text" name="captcha" placeholder="Text from image">
 		</div>
 		<div class="form-cons-submit form-submit" id="contact-form-submit">
 			 Submit
 		</div>
 	</div>
 	<div class="black">
-        By submitting a form, you confirm your
-    	<a href="/agreement/" class="agreement-link" target="_blank">consent to the processing of personal data</a>
-    </div>
+		 By submitting a form, you confirm your <a href="/agreement/" class="agreement-link" target="_blank">consent to the processing of personal data</a>
+	</div>
 </div>
  <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

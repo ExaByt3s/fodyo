@@ -4,12 +4,19 @@ $APPLICATION->setTitle("Контакты");
 ?><div class="block-title">
 	<h1>Контакты</h1>
 </div>
+<b>Нью-Йорк, США</b><br>
+ <br>
+ 100 Church Street, &nbsp;<br>
+ New York,&nbsp;NY 10007&nbsp;<br>
+ <br>
+ <b>Москва, Россия</b><br>
+ <br>
+ Москва, 107392,<br>
+ул. Халтуринская 17,<br>
+Номер телефона:&nbsp;<a href="tel:+74956652255">+7 (495) 665 22 55</a><br>
 <div class="cat-info-block contacts-block" style="margin: 20px 0;">
 	<div class="line" style="margin-bottom:20px;">
 		 Fodyo.com
-	</div>
-	<div class="line">
-		 Номер телефона: <a href="tel:+74956652255">+7 (495) 665 22 55</a>
 	</div>
 	<div class="line">
 		 Эл. Почта: <a href="mailto:mail@fodyo.com">mail@fodyo.com</a>
@@ -28,9 +35,8 @@ $APPLICATION->setTitle("Контакты");
 			 Оставить заявку
 		</div>
 		<div class="black">
-			Отправляя форму, вы подтверждаете своё
-		    <a href="/agreement/" class="agreement-link" target="_blank">согласие на обработку персональных данных</a>
-	    </div>
+			 Отправляя форму, вы подтверждаете своё <a href="/agreement/" class="agreement-link" target="_blank">согласие на обработку персональных данных</a>
+		</div>
 	</div>
 </div>
  <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

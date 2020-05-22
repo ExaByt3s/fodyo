@@ -178,7 +178,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                     }else{
                         echo GetMessage('FLATS-STUDIOS').str_replace($arResult['CODE'], '', $arResult['NAME']);
                     }
-                    ?>      
+                    ?>
                 </span>
             </div>
             <div class="flex-sku">
@@ -247,13 +247,13 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                             ?>
                             <div class="flex-prop">
                                 <div class="left"><?=GetMessage('OFFICIAL_SITE')?>:</div>
-                                <div class="right">
-                                    <?
-                                    if( stristr($value['VALUE'], 'http') === false ){
-                                        $value['VALUE'] = "http://".$value['VALUE'];
-                                    }
-                                    ?>
-                                    <a href="<?=$value['VALUE']?>" target="_blank" class="orange-text"><?=GetMessage('GO_TO_TEXT')?></a>
+									<div class="right">
+									<?
+									if( stristr($value['VALUE'], 'http') === false ){
+										$value['VALUE'] = "http://".$value['VALUE'];
+									}
+									?>
+									<a href="<?=$value['VALUE']?>" target="_blank" class="orange-text"><?=GetMessage('GO_TO_TEXT')?></a>
                                 </div>
                             </div>
                             <?
@@ -390,7 +390,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                     global $arrFilterSKU;
                     $arrFilterSKU = array('ID' => $arrAdd);
 
-                    
+
 
                     $APPLICATION->IncludeComponent(
                         "bitrix:catalog.section", 
@@ -690,11 +690,11 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                             <div class="left"><?=GetMessage('SKU_FLOOR_TEXT')?></div>
                                             <div class="right">
                                                 <?
-                                                if($value['VALUE']['TYPE'] != 'HTML'){
-                                                    echo $value['VALUE'];
-                                                }else{
-                                                    echo $value['VALUE']['TEXT'];
-                                                }
+												if($value['VALUE']['TYPE'] != 'HTML'){
+													echo $value['VALUE'];
+												}else{
+													echo $value['VALUE']['TEXT'];
+												}
                                                 ?>
                                             </div>
                                         </div>
@@ -742,26 +742,29 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                                     }else{
                                                         $currency = "RUB";
                                                     }
-                                                    if($_COOKIE['CURRENCY_SET']){
-                                                        /*echo CCurrencyLang::CurrencyFormat(
-                                                            ceil(CCurrencyRates::ConvertCurrency($value['VALUE'], $currency, $_COOKIE['CURRENCY_SET'])),
-                                                            $_COOKIE['CURRENCY_SET']
-                                                            );*/
-                                                        $priceLot = CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], $_COOKIE['CURRENCY_SET']);
-                                                        echo CCurrencyLang::CurrencyFormat(ceil($priceLot/$areaLot),
-                                                        $_COOKIE['CURRENCY_SET']
-                                                        );
-                                                    }else{
-                                                        /*echo CCurrencyLang::CurrencyFormat(
-                                                            ceil(CCurrencyRates::ConvertCurrency($value['VALUE'], $currency, 'USD')),
-                                                            'USD'
-                                                            );*/
-                                                        $priceLot = CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], 'USD');
-                                                        echo CCurrencyLang::CurrencyFormat(ceil($priceLot/$areaLot),
-                                                        'USD'
-                                                        );
-                                                    }
-                                                    
+													if ((CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], $_COOKIE['CURRENCY_SET']) == 0)or(CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], 'USD')==0)) {
+														if(LANGUAGE_ID == 'en'){ echo'Price on request';} else {echo'Цена по запросу';};
+													}else{
+														if($_COOKIE['CURRENCY_SET']){
+															/*echo CCurrencyLang::CurrencyFormat(
+																ceil(CCurrencyRates::ConvertCurrency($value['VALUE'], $currency, $_COOKIE['CURRENCY_SET'])),
+																$_COOKIE['CURRENCY_SET']
+																);*/
+															$priceLot = CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], $_COOKIE['CURRENCY_SET']);
+															echo CCurrencyLang::CurrencyFormat(ceil($priceLot/$areaLot),
+															$_COOKIE['CURRENCY_SET']
+															);
+														}else{
+															/*echo CCurrencyLang::CurrencyFormat(
+																ceil(CCurrencyRates::ConvertCurrency($value['VALUE'], $currency, 'USD')),
+																'USD'
+																);*/
+															$priceLot = CCurrencyRates::ConvertCurrency($priceItem['VAL'], $priceItem['CURRENCY'], 'USD');
+															echo CCurrencyLang::CurrencyFormat(ceil($priceLot/$areaLot),
+															'USD'
+															);
+														}
+													}
                                                     ?>
                                                 </div>
                                             </div>

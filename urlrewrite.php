@@ -136,14 +136,6 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/ymarket/index.php',
     'SORT' => 100,
   ),
-  122 => 
-  array (
-    'CONDITION' => '#^/ru-au/developments/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-au/developments/index.php',
-    'SORT' => 100,
-  ),
   119 => 
   array (
     'CONDITION' => '#^/en-es/developments/#',
@@ -176,6 +168,14 @@ $arUrlRewrite=array (
     'PATH' => '/en-au/developments/index.php',
     'SORT' => 100,
   ),
+  120 => 
+  array (
+    'CONDITION' => '#^/en-fr/developments/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/en-fr/developments/index.php',
+    'SORT' => 100,
+  ),
   109 => 
   array (
     'CONDITION' => '#^/en-us/developments/#',
@@ -192,20 +192,20 @@ $arUrlRewrite=array (
     'PATH' => '/ru-uk/developments/index.php',
     'SORT' => 100,
   ),
-  120 => 
+  122 => 
   array (
-    'CONDITION' => '#^/en-fr/developments/#',
+    'CONDITION' => '#^/ru-au/developments/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-fr/developments/index.php',
+    'PATH' => '/ru-au/developments/index.php',
     'SORT' => 100,
   ),
-  116 => 
+  123 => 
   array (
-    'CONDITION' => '#^/en-de/developments/#',
+    'CONDITION' => '#^/ru-de/developments/#',
     'RULE' => '',
     'ID' => 'bitrix:catalog',
-    'PATH' => '/en-de/developments/index.php',
+    'PATH' => '/ru-de/developments/index.php',
     'SORT' => 100,
   ),
   104 => 
@@ -222,6 +222,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/ru-fr/developments/index.php',
+    'SORT' => 100,
+  ),
+  116 => 
+  array (
+    'CONDITION' => '#^/en-de/developments/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/en-de/developments/index.php',
     'SORT' => 100,
   ),
   113 => 
@@ -254,14 +262,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/ru-us/developments/index.php',
-    'SORT' => 100,
-  ),
-  123 => 
-  array (
-    'CONDITION' => '#^/ru-de/developments/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/ru-de/developments/index.php',
     'SORT' => 100,
   ),
   145 => 
