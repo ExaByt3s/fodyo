@@ -1,3 +1,103 @@
+.checkboxAgrementBlockInBank{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInBank .checkboxAgreement{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInBank div.black{
+    margin: 0;
+    flex: 1;
+    padding: 0 !important;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+.checkboxPolicyBlockInBank{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInBank .checkboxAgreement{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInBank div.black{
+    margin: 0;
+    flex: 1;
+    padding: 0 !important;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+/*=================*/
+
+.checkboxAgrementBlockInContact{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInContact #idCheckboxInContact{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxAgrementBlockInContact div.black{
+    margin: 0;
+    flex: 1;
+    padding: 0 !important;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+.checkboxPolicyBlockInContact{
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInContact #idCheckboxPolicyInContact{
+    max-width: 26px;
+    margin: 0;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkboxPolicyBlockInContact div.black{
+    margin: 0;
+    flex: 1;
+    padding: 0 !important;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+}
+
+/*=================*/
+
 .checkboxAgrementBlockInFooter{
     display: flex;
     margin: 10px 0 0 0;

@@ -1,7 +1,7 @@
  <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 use \Bitrix\Main\Localization\Loc;
-
+/*test*/
 /**
  * @global CMain $APPLICATION
  * @var array $arParams
@@ -12,6 +12,8 @@ use \Bitrix\Main\Localization\Loc;
  * @var string $componentPath
  * @var string $templateFolder
  */
+
+
 
 $this->setFrameMode(true);
 $this->addExternalCss('/bitrix/css/main/bootstrap.css');
@@ -148,6 +150,7 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
     }
 }
 ?>
+<link rel="stylesheet" type="text/css" href="/develop/bitrix/templates/23/components/bitrix/catalog.element/.default/style.css" />
 <?php
                                 $nameValuta = "";
                                 $inlineNameValuta = "";
@@ -178,8 +181,9 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
                                     }
                                     ?>
 <?
-    $APPLICATION->SetAdditionalCSS("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.css");
-    $APPLICATION->AddHeadScript("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.js");
+$APPLICATION->SetAdditionalCSS("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.css");
+$APPLICATION->SetAdditionalCSS("/bitrix/templates/23/components/bitrix/catalog.element/.default/styleTabbar.css");
+$APPLICATION->AddHeadScript("/bitrix/templates/23/components/bitrix/catalog.element/.default/CheckBox.js");
 ?>
 <div class="breadcrumbs">
     <?$APPLICATION->IncludeComponent(

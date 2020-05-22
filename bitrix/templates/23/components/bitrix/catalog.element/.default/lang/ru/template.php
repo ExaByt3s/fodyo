@@ -129,4 +129,20 @@ $MESS['SENDING_TEXT2'] = 'Согласен на обработку ';
 $MESS['AGREEMENT_TEXT2'] = 'персональных данных';
 $MESS['HREF_AGREEMENT'] = '/ru/agreement/';
 $MESS['HREF_POLICY'] = '/ru/policy/';
+
+
+$MESS['STUDIO_TEXT_FS'] = 'Студия';
+$MESS['1_ROOM_TEXT_FS'] = '1 комнатные';
+$MESS['2_ROOM_TEXT_FS'] = '2 комнатные';
+$MESS['3_ROOM_TEXT_FS'] = '3 комнатные';
+$MESS['4+_ROOM_TEXT_FS'] = '4+ комнатные';
+$MESS['FREE_PLAN_TEXT_FS'] = 'Свободная планировка';
+
+$MESS['STUDIO_TEXT_MS'] = 'Ст.';
+$MESS['1_ROOM_TEXT_MS'] = '1 комн.';
+$MESS['2_ROOM_TEXT_MS'] = '2 комн.';
+$MESS['3_ROOM_TEXT_MS'] = '3 комн.';
+$MESS['4+_ROOM_TEXT_MS'] = '4+ комн.';
+$MESS['FREE_PLAN_TEXT_MS'] = 'Св. план.';
+
 ?>

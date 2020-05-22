@@ -24,7 +24,7 @@ $strTitle = "";
                 $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_EDIT"));
                 $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
 
-                //echo "<pre>"; print_r(); echo "</pre>";
+                //echo "<pre>"; print_r($arSection); echo "</pre>";
 
                 $xplo = explode('/', $APPLICATION->GetCurDir());
                 $explo = explode('-', $xplo);
@@ -41,7 +41,10 @@ $strTitle = "";
                 }
                      
                 $link = '<a href="'.$arSection["SECTION_PAGE_URL"].'">'.$arSection["NAME"].$count.'</a>';
-                echo "<li>".$link."</li>";
+                
+                //удалить Филадельфию
+                if($arSection["ID"] != 1282)
+                    echo "<li>".$link."</li>";
             }
         }
         ?>

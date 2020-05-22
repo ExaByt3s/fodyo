@@ -43,7 +43,7 @@ $APPLICATION->SetTitle("Mortgage");
              15,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Сбербанк">
+            <div class="button-column form-bank" id="sberbank" data-bank="Сбербанк">
                  Оставить заявку
             </div>
         </div>
@@ -59,7 +59,7 @@ $APPLICATION->SetTitle("Mortgage");
              10,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Альфа Банк">
+            <div class="button-column form-bank" id="alfa" data-bank="Альфа Банк">
                  Оставить заявку
             </div>
         </div>
@@ -75,7 +75,7 @@ $APPLICATION->SetTitle("Mortgage");
              20,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Абсолют Банк">
+            <div class="button-column form-bank" id="absolutbank" data-bank="Абсолют Банк">
                  Оставить заявку
             </div>
         </div>
@@ -91,7 +91,7 @@ $APPLICATION->SetTitle("Mortgage");
              10,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Банк Возрождение">
+            <div class="button-column form-bank" id="vozrojdenie" data-bank="Банк Возрождение">
                  Оставить заявку
             </div>
         </div>
@@ -107,7 +107,7 @@ $APPLICATION->SetTitle("Mortgage");
              10,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="ВТБ">
+            <div class="button-column form-bank" id="vtb" data-bank="ВТБ">
                  Оставить заявку
             </div>
         </div>
@@ -123,7 +123,7 @@ $APPLICATION->SetTitle("Mortgage");
              15,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Банк Дом">
+            <div class="button-column form-bank" id="dom" data-bank="Банк Дом">
                  Оставить заявку
             </div>
         </div>
@@ -139,7 +139,7 @@ $APPLICATION->SetTitle("Mortgage");
              15,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Райффайзенбанк">
+            <div class="button-column form-bank" id="raifaizen" data-bank="Райффайзенбанк">
                  Оставить заявку
             </div>
         </div>
@@ -155,7 +155,7 @@ $APPLICATION->SetTitle("Mortgage");
              20,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Открытие Банк">
+            <div class="button-column form-bank" id="otkritie" data-bank="Открытие Банк">
                  Оставить заявку
             </div>
         </div>
@@ -171,7 +171,7 @@ $APPLICATION->SetTitle("Mortgage");
              15,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="СвязьБанк">
+            <div class="button-column form-bank" id="svjaz" data-bank="СвязьБанк">
                  Оставить заявку
             </div>
         </div>
@@ -187,7 +187,7 @@ $APPLICATION->SetTitle("Mortgage");
              0,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Сургутнефтегазбанк">
+            <div class="button-column form-bank" id="surgut" data-bank="Сургутнефтегазбанк">
                  Оставить заявку
             </div>
         </div>
@@ -203,7 +203,7 @@ $APPLICATION->SetTitle("Mortgage");
              10,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Совкомбанк">
+            <div class="button-column form-bank" id="sovkom" data-bank="Совкомбанк">
                  Оставить заявку
             </div>
         </div>
@@ -219,7 +219,7 @@ $APPLICATION->SetTitle("Mortgage");
              15,00 %
         </div>
         <div class="column">
-            <div class="button-column form-bank" data-bank="Росбанк Дом">
+            <div class="button-column form-bank" id="rosbank" data-bank="Росбанк Дом">
                  Оставить заявку
             </div>
         </div>
@@ -241,4 +241,5 @@ $APPLICATION->SetTitle("Mortgage");
  <br>
  </li>
 </ul>
-     <script> var widgetOptions46362 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"); a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=46362&t="+Math.floor(new Date()/1800000); document.getElementsByTagName("head")[0].appendChild(a) })();</script><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+     <script> var widgetOptions46362 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"); a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=46362&t="+Math.floor(new Date()/1800000); document.getElementsByTagName("head")[0].appendChild(a) })();
+     </script><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -33,7 +33,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Well Fargo">
+			<div class="button-column form-bank" data-bank="Well Fargo" id="WF">
 				 Request Quote
 			</div>
 		</div>
@@ -49,7 +49,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Bank of America">
+			<div class="button-column form-bank" data-bank="Bank of America" id="BoA">
 				 Request Quote
 			</div>
 		</div>
@@ -65,7 +65,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Chase">
+			<div class="button-column form-bank" data-bank="Chase" id="Chase">
 				 Request Quote
 			</div>
 		</div>
@@ -81,7 +81,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Citibank">
+			<div class="button-column form-bank" data-bank="Citibank" id="Citibank">
 				 Request Quote
 			</div>
 		</div>
@@ -97,7 +97,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Blueleaf Lending">
+			<div class="button-column form-bank" data-bank="Blueleaf Lending" id="Blueleaf">
 				 Request Quote
 			</div>
 		</div>
@@ -113,7 +113,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Eclick Lending">
+			<div class="button-column form-bank" data-bank="Eclick Lending" id="Eclick">
 				 Request Quote
 			</div>
 		</div>
@@ -129,7 +129,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Fairway">
+			<div class="button-column form-bank" data-bank="Fairway" id="Fairway">
 				 Request Quote
 			</div>
 		</div>
@@ -145,7 +145,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Federal Savings Bank">
+			<div class="button-column form-bank" data-bank="Federal Savings Bank" id="Federal">
 				 Request Quote
 			</div>
 		</div>
@@ -161,7 +161,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="United Home Loans">
+			<div class="button-column form-bank" data-bank="United Home Loans" id="United">
 				 Request Quote
 			</div>
 		</div>
@@ -177,7 +177,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Guaranteed Rate">
+			<div class="button-column form-bank" data-bank="Guaranteed Rate" id="Guaranteed">
 				 Request Quote
 			</div>
 		</div>
@@ -193,7 +193,7 @@ $APPLICATION->SetTitle("Mortgage");
 			 5,00 %
 		</div>
 		<div class="column">
-			<div class="button-column form-bank" data-bank="Homestar">
+			<div class="button-column form-bank" data-bank="Homestar" id="Homestar">
 				 Request Quote
 			</div>
 		</div>
