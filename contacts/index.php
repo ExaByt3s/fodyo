@@ -37,9 +37,20 @@ Moscow, 107392<br>
 		<div class="form-cons-submit form-submit" id="contact-form-submit">
 			 Submit
 		</div>
-	</div>
-	<div class="black">
-		 By submitting a form, you confirm your <a href="/agreement/" class="agreement-link" target="_blank">consent to the processing of personal data</a>
+		<div class="checkboxAgrementBlockInContact">
+                    <input type="checkbox" id="idCheckboxInContact" onchange="funcOnchangeCheckboxInContact()">
+                    <div class="agreement black">
+                        I have read the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Privacy policy</a>
+                    </div>
+                </div>
+                <div class="checkboxPolicyBlockInContact">
+                    <input type="checkbox" id="idCheckboxPolicyInContact" onchange="funcOnchangeCheckboxInContact()">
+                    <div class="agreement black">
+                        I have read and accept the 
+                        <a href="/policy/" class="agreement-link" target="_blank">Terms of use</a>
+                    </div>
+                </div>
 	</div>
 </div>
  <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
