@@ -44,6 +44,15 @@ CJSCore::Init(array("fx"));
 $curPage = $APPLICATION->GetCurPage(true);
 $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "blue", SITE_ID);
 
+function debug($param) {
+    if ($_COOKIE['debug']) {
+        echo '<pre>';
+        print_r($param);
+        echo '</pre>';
+    }
+    return 0;
+}
+
 ?>
 <!DOCTYPE html>
 <html xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>">
@@ -54,7 +63,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
     <meta name="google-site-verification" content="ifcVWmhh3YtPhBimT5vHzFe1RcQ7ge56FEll5UXMcmU" />
-    <?
+   <?
         if (substr_count($_SERVER['SERVER_NAME'], 'develop.fodyo') > 0) {
 
         // $APPLICATION->SetPageProperty("robots", "noindex, nofollow");
@@ -167,7 +176,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
     }
     
     ?>
-    <?if (substr_count($_SERVER['SERVER_NAME'], 'develop.fodyo') > 0) {?>
+ <?if (substr_count($_SERVER['SERVER_NAME'], 'develop.fodyo') > 0) {?>
 
     <link rel="alternate" hreflang="x-default" href="<?='https://develop.fodyo.com'.$exploEn;?>" />
     <link rel="alternate" hreflang="en" href="<?='https://develop.fodyo.com'.$exploEn;?>" />

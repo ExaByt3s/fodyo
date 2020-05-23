@@ -4,43 +4,9 @@ define("NO_KEEP_STATISTIC", true);
 //Подключаем движок
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 //устанавливаем тип ответа как xml документ
-header('Content-Type: application/xml; charset=utf-8');
+/*header('Content-Type: application/xml; charset=utf-8');
 echo '<?xml version="1.0" encoding="UTF-8"?>';
-echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-
-//$array_pages = array();
-/*
- //Простые текстовые страницы: начало
- $array_pages[] = array(
- 'NAME' => 'Главная страница',
- 'URL' => '/',
- );
- $array_pages[] = array(
- 'NAME' => 'Компания',
- 'URL' => '/kompaniya/',
- );
- $array_pages[] = array(
- 'NAME' => 'Новости',
- 'URL' => '/novosti/',
- );
- $array_pages[] = array(
- 'NAME' => 'Услуги',
- 'URL' => '/uslugi/',
- );
- $array_pages[] = array(
- 'NAME' => 'Портфолио',
- 'URL' => '/portfolio/',
- );
- $array_pages[] = array(
- 'NAME' => 'Отзывы',
- 'URL' => '/otzyvy/',
- );
- $array_pages[] = array(
- 'NAME' => 'Контакты',
- 'URL' => '/kontakty/',
- );
- //Простые текстовые страницы: конец
- */
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';*/
 
 function getElementForSection($block, $sectionId)
 {
@@ -57,18 +23,16 @@ function getElementForSection($block, $sectionId)
     $mass_rez=array();
     while($ob = $res->GetNextElement())
     {
-        
         //echo '<pre>',print_r($ob),'</pre>';
         $result[] = $ob;
     }
-    
-    //echo '<pre>',print_r($result),'</pre>';
     return $result;
 }
 
 
 function workInCatalog($prefix, $block)
 {
+    global $arrayResult;
     //echo '<pre>',$block,'</pre>';
     $rsSections = CIBlockSection::GetList(
         array("SORT" => "ASC"),
@@ -81,132 +45,99 @@ function workInCatalog($prefix, $block)
         if($arSect['CODE'] !== '')
         {
             $tmp = $arSect['CODE'];
-            echo '<url>';
+            /*echo '<url>';
             echo '<loc>';
             echo '<![CDATA['.$prefix.'/'.$tmp.'/]]>';
             echo '</loc>';
-            
             echo '<lastmod>';
-            echo $arSect['TIMESTAMP_X'];
+            echo date('c', strtotime($arSect['TIMESTAMP_X']));
             echo '</lastmod>';
-            
-            echo '</url>';
+            echo '</url>';*/
             //echo '<pre>',$block.' '.$arSect['ID'],'</pre>';
+            $arrayResult[] = '<url>'.
+             '<loc>'.
+             htmlentities($prefix.'/'.$tmp.'/', ENT_SUBSTITUTE	, "UTF-8").
+             '</loc>'.
+             '<lastmod>'.
+             date('c', strtotime($arSect['TIMESTAMP_X'])).
+             '</lastmod>'.
+             '</url>';
             
             $element = getElementForSection($block, $arSect['ID']);
             foreach ($element as $obj)
             {
                 $tmp2 = $prefix.'/'.$arSect['CODE'].'/'.$obj->GetFields()['CODE'];
-                echo '<url>';
+                /*echo '<url>';
                 echo '<loc>';
                 echo '<![CDATA['.$tmp2.'/]]>';
                 echo '</loc>';
-                
                 echo '<lastmod>';
-                echo $obj->GetFields()['TIMESTAMP_X'];
+                echo date('c', strtotime($obj->GetFields()['TIMESTAMP_X']));
                 echo '</lastmod>';
-                
-                echo '</url>';
-                //echo '<pre>',($obj.GetFields())['CODE'],'</pre>';
+                echo '</url>';*/
+                $arrayResult[] = '<url>'.
+                 '<loc>'.
+                 htmlentities($tmp2.'/', ENT_SUBSTITUTE	, "UTF-8").
+                 '</loc>'.
+                 '<lastmod>'.
+                 date('c', strtotime($obj->GetFields()['TIMESTAMP_X'])).
+                 '</lastmod>'.
+                 '</url>';
             }
         }
-        
     }
-    
     return $prev.'/';
-    
 }
-
-
-
-//echo '<pre>',print_r($langArray),'</pre>';
-//echo '<pre>',print_r($countrysArray),'</pre>';
 
 if(CModule::IncludeModule("iblock"))
 {
-    $iblock = 4;
+    $iblock = 7;
     
-                $prefix = "https://develop.fodyo.com/ru/articles";
-                workInCatalog($prefix, 7);
-             
+    $fileCount = 40000;
+    
+    $arrayResult = array();
+    $prefix = "https://fodyo.com/ru/articles";
+    workInCatalog($prefix, $iblock);
     
     
+    echo "<pre>iBlock ".$iblock."</pre>";
+    echo "<pre>struct sitemap was generated</pre>";
+    
+    
+    $countFiles = ceil(count($arrayResult) / $fileCount);
+    
+    echo "<pre>Count URLs ".count($arrayResult)."</pre>";
+    echo "<pre>Count files ".$countFiles."</pre>";
+    
+    for ($i = 0; $i < $countFiles; $i++) {
+        
+        $fp = fopen("./sitemap_iblock_".$iblock."_".$i.".xml", "w+");
+        
+        
+        fwrite($fp, '<?xml version="1.0" encoding="UTF-8"?>');
+        fwrite($fp, '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+        
+        for($j = 0; $j < $fileCount; $j++)
+        {
+            $index = $i *$fileCount + $j;
+            if($index < count($arrayResult))
+            {
+                fwrite($fp, $arrayResult[$index]);
+            }
+            
+        }
+        
+        fwrite($fp,  '</urlset>');
+        
+        fclose($fp);
+        
+        echo "<pre>".($i+1)." file was writen</pre>";
+        
+    }
+    
+    echo "<pre>OK</pre>";
     
 }
 
-
-/*
- $array_iblocks_id = array('4'); //ID инфоблоков, разделы и элементы которых попадут в карту сайта
- if(CModule::IncludeModule("iblock"))
- {
- foreach($array_iblocks_id as $iblock_id)
- {
- //Список разделов
- //Список элементов
- $res = CIBlockSection::GetList(
- array(),
- Array(
- "IBLOCK_ID" => $iblock_id,
- "ACTIVE" => "Y" ,
- ),
- false,
- array(
- "ID",
- "NAME",
- "SECTION_PAGE_URL",
- ));
- while($ob = $res->GetNext())
- {
- $array_pages[] = array(
- 'NAME' => $ob['NAME'],
- 'URL' => $ob['SECTION_PAGE_URL'],
- );
- }
- //Список элементов
- $res = CIBlockElement::GetList(
- array(),
- Array(
- "IBLOCK_ID" => $iblock_id,
- "ACTIVE_DATE" => "Y",
- "ACTIVE" => "Y" ,
- ),
- false,
- false,
- array(
- "ID",
- "NAME",
- "DETAIL_PAGE_URL",
- ));
- while($ob = $res->GetNext())
- {
- $array_pages[] = array(
- 'NAME' => $ob['NAME'],
- 'URL' => $ob['DETAIL_PAGE_URL'],
- );
- }
- }
- }
- 
- //Создаём XML документ: начало
- $xml_content = '';
- $site_url = 'http://'.$_SERVER['HTTP_HOST'];
- $quantity_elements = 0;
- foreach($array_pages as $v)
- {
- $quantity_elements++;
- $xml_content.='
- <url>
- <loc>'.$site_url.$v['URL'].'</loc>
- <priority>1</priority>
- </url>
- ';
- }
- //Создаём XML документ: конец
- 
- //Выводим документ
- echo '<?xml version="1.0" encoding="UTF-8"?>
- <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- '.$xml_content.'*/
-echo '</urlset>';
-
+//echo '</urlset>';
 ?>

@@ -20,3 +20,5 @@
 [06-Apr-2020 11:44:31 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bxadmin/public_html/bitrix/modules/iblock/classes/mysql/iblocksection.php on line 193
 [06-Apr-2020 11:52:32 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bxadmin/public_html/bitrix/modules/main/classes/general/usertype.php on line 1038
 [22-Apr-2020 06:31:15 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bxadmin/public_html/bitrix/modules/main/classes/general/usertype.php on line 3034
+[08-May-2020 09:46:13 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bxadmin/public_html/bitrix/modules/main/classes/mysql/database_mysqli.php on line 47
+[17-May-2020 10:54:34 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/bxadmin/public_html/bitrix/modules/iblock/classes/mysql/iblocksection.php on line 193

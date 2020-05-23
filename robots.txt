@@ -8,6 +8,8 @@ Allow: /include/
 Allow: /bitrix/panel/
 Allow: /bitrix/css/*.css
 Allow: /bitrix/tools/*.php
+Allow: /bitrix/fonts/*.woff
+Allow: /bitrix/fonts/*.ttf
 Disallow: */index.php
 Disallow: /bitrix/
 Disallow: /dev/
@@ -45,4 +47,3 @@ Disallow: /*?view_result=
 Disallow: /*&view_result=
 Host: https://fodyo.com
 Sitemap: https://fodyo.com/sitemap.xml
-Sitemap: https://fodyo.com/sitemap2.xml
