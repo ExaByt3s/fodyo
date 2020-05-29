@@ -1,3 +1,9 @@
+@media (max-width: 1170px) {
+	ul.flex-countries li {
+		justify-content: flex-start;
+	}
+}
+
 /* Sidebar */
 .product-item-detail-info-section { padding: 0 20px; }
 

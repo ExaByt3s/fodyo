@@ -175,7 +175,7 @@ function GetAllSectionIn($IBLOCK_ID, $SECTION_ID, $arFilter, $arSelect){
                     $part = 'none';
                 }
                 ?>
-                <span class="huge-title">
+                <span class="huge-title"><h1 class="H1-huge-title">
                     <?
                     if($arrSection['NAME'] == 'Moscow'){
                         $urlBack = '/bitrix/templates/23/images/moscow-gerb.png';
@@ -202,7 +202,7 @@ function GetAllSectionIn($IBLOCK_ID, $SECTION_ID, $arFilter, $arSelect){
                         $print = str_replace('Новая', 'Новой', $print);
                         echo $print;
                     }
-                    ?></span>
+                    ?></h1></span>
             </div>
 
             <?/*if(!stristr($APPLICATION->GetCurDir(), 'flat')){

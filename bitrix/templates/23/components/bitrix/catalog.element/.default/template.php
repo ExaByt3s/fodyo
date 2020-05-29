@@ -199,12 +199,15 @@ $APPLICATION->AddHeadScript("/bitrix/templates/23/components/bitrix/catalog.elem
     );?>
 </div>
 <?
+
+//echo "<pre>"; print_r($_REQUEST); echo "</pre>";
+
 if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
     ?>
     <div class="max-width">
         <div class="detail-block">
             <div class="block-title">
-                <span style="text-align: left;">
+                <span style="text-align: left;"><h1 class="H1-huge-title">
                     <?
                     $xplode = explode('/', $APPLICATION->GetCurDir());
                     $getReq = explode(';', $_REQUEST['item']);
@@ -213,6 +216,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                     $headerTitlePart = strtoupper($getReqTitle[0]);
 
                     //echo "<pre style='display:none;'>"; print_r($arResult['DETAIL_PAGE_URL']); echo "</pre>";
+                    //echo "<pre>"; print_r($headerTitlePart); echo "</pre>";
 
                     //$arResult['DETAIL_PAGE_URL'] = str_replace('/'.strtolower(LANGUAGE_ID), '', $arResult['DETAIL_PAGE_URL']);;
 
@@ -241,7 +245,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                         echo $getMes."<a href=".$arResult['DETAIL_PAGE_URL'].">".str_replace($arResult['CODE'], '', $arResult['NAME']).'</a>';
                     }
                     ?>
-                </span>
+                </h1></span>
             </div>
             <?
            
@@ -506,6 +510,9 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                         $arrFilterSKU = array('ID' => $arrAdd);
 
 
+                        
+                        echo "<pre>"; print_r($arrFilterSKU); echo "</pre>";
+                        
                         if(is_array($arrAdd) && $arrAdd[0] != ''){
                             $APPLICATION->IncludeComponent(
                                 "bitrix:catalog.section", 
@@ -933,7 +940,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                         <div>
                             <div class="info-table">
                                 <div class="block-title">
-                                    <span style="text-align: left;">
+                                    <span style="text-align: left;"><h1 class="H1-huge-title">
                                     <?
                                         if(LANGUAGE_ID != 'en'){
                                             echo str_replace($arResult['CODE'], '', $arResult['PROPERTIES']['NAME_'.strtoupper(LANGUAGE_ID)]['VALUE']);
@@ -941,7 +948,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                             echo str_replace($arResult['CODE'], '', $arResult['NAME']);
                                         }
                                     ?>
-                                    </span>
+                                    </h1></span>
                                     <?
                                     echo '<div class="address_under_title">'.$arResult['PROPERTIES']['ADDRESS_'.strtoupper(LANGUAGE_ID)]['VALUE'].'</div>';
                                     ?>
@@ -1271,6 +1278,731 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                             //echo '<pre>'; print_r($arrResFlats); echo '</pre>';
                             if(is_array($arrResFlats)){
                                 ?>
+                                
+                                
+                                <!-- ================= -->
+                                
+                                
+                                
+                                
+                                <div class="tabs">
+
+                              <input type="radio" id="tab1" name="tab-control" checked>
+                              <input type="radio" id="tab2" name="tab-control">
+                              <input type="radio" id="tab3" name="tab-control">
+                              <input type="radio" id="tab4" name="tab-control">
+                              <input type="radio" id="tab5" name="tab-control">
+                              <input type="radio" id="tab6" name="tab-control">
+                              <ul>
+                                <li title="Features"><label for="tab1" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('STUDIO_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('STUDIO_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Delivery Contents"><label for="tab2" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('1_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('1_ROOM_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Shipping"><label for="tab3" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('2_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('2_ROOM_TEXT_MS')?></div>
+                                </span></label></li>    
+                                <li title="Returns"><label for="tab4" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('3_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('3_ROOM_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Returns"><label for="tab5" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('4+_ROOM_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('4+_ROOM_TEXT_MS')?></div>
+                                </span></label></li>
+                                <li title="Returns"><label for="tab6" role="button"><br><span>
+									<div class="table-content-full-size"><?=GetMessage('FREE_PLAN_TEXT_FS')?></div>
+                                    <div class="table-content-mobile-size"><?=GetMessage('FREE_PLAN_TEXT_MS')?></div>
+                                </span></label></li>
+                              </ul>
+
+                              <div class="slider"><div class="indicator"></div></div>
+                              <div class="content">
+                              
+                                <section>
+
+								<?php 
+
+                                
+                                global $arrFilter1room;
+                                global $arrFilter2room;
+                                global $arrFilter3room;
+                                global $arrFilter4room;
+                                global $arrFilterStroom;
+                                
+                                $arr1room = Array();
+                                $arr2room = Array();
+                                $arr3room = Array();
+                                $arr4room = Array();
+                                $arrStroom = Array();
+                                
+                              $getSku = CIBlockElement::GetList(
+                                  array('PROPERTY_PRICE_'.strtoupper(LANGUAGE_ID).'_VALUE' => 'ASC'),
+                                  array('PROPERTY_CML2_LINK' => $arResult['ID'], 'IBLOCK_ID' => 8),
+                                  false,
+                                  false,
+                                  array('ID', 'NAME', 'IBLOCK_SECTION_ID', 'PROPERTY_CML2_LINK', 'PROPERTY_FLAT_TYPE', 'PROPERTY_PRICE_'.strtoupper(LANGUAGE_ID))
+                                  );
+
+                              $getItemsReq = explode(';', $_REQUEST['item']);
+                              //debug($getItemsReq);
+                              while ($fetchList = $getSku->GetNext()) 
+                              {
+                                  if(stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '1-комн'))
+                                  {
+                                      $arr1room[] = $fetchList['ID'];
+                                  }
+                                  if(stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '2-комн'))
+                                  {
+                                      $arr2room[] = $fetchList['ID'];
+                                  }
+                                  if(stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '3-комн'))
+                                  {
+                                      $arr3room[] = $fetchList['ID'];
+                                  }
+                                  if(stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], '4-комн'))
+                                  {
+                                      $arr4room[] = $fetchList['ID'];
+                                  }
+                                  if(stristr($fetchList['PROPERTY_FLAT_TYPE_VALUE'], 'Студия'))
+                                  {
+                                      $arrStroom[] = $fetchList['ID'];
+                                  }
+                              }
+                              
+                              
+                              $arrFilter1room = array('ID' => $arr1room);
+                              $arrFilter2room = array('ID' => $arr2room);
+                              $arrFilter3room = array('ID' => $arr3room);
+                              $arrFilter4room = array('ID' => $arr4room);
+                              $arrFilterStroom = array('ID' => $arrStroom);
+                              
+                              /*echo "<pre>"; print_r($arrFilter1room); echo "</pre>";
+                              
+                              echo "<pre>"; print_r($arrFilter2room); echo "</pre>";
+                              
+                              echo "<pre>"; print_r($arrFilter3room); echo "</pre>";
+                              
+                              echo "<pre>"; print_r($arrFilter4room); echo "</pre>";
+                              
+                              echo "<pre>"; print_r($arrFilterStroom); echo "</pre>";
+                              
+                              echo "<pre>"; print_r($_REQUEST); echo "</pre>";
+                              */
+
+                              if(is_array($arrFilterStroom) && count($arrFilterStroom) > 0){
+                                  
+                                  echo '<div class="table sku-items">';
+                                  //echo "<pre>!111"; print_r($arrFilterStroom); echo "</pre>";
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section", 
+                                "template-flats", 
+                                array(
+                                    "ACTION_VARIABLE" => "action",
+                                    "ADD_PICT_PROP" => "-",
+                                    "ADD_PROPERTIES_TO_BASKET" => "Y",
+                                    "ADD_SECTIONS_CHAIN" => "N",
+                                    "ADD_TO_BASKET_ACTION" => "ADD",
+                                    "AJAX_MODE" => "N",
+                                    "AJAX_OPTION_ADDITIONAL" => "",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "BACKGROUND_IMAGE" => "-",
+                                    "BASKET_URL" => "/personal/basket.php",
+                                    "BROWSER_TITLE" => "-",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COMPATIBLE_MODE" => "Y",
+                                    "COMPONENT_TEMPLATE" => "template-flats",
+                                    "CONVERT_CURRENCY" => "N",
+                                    "CUSTOM_FILTER" => "",
+                                    "DETAIL_URL" => '/condos/#ELEMENT_CODE#',
+                                    "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+                                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                                    "DISPLAY_COMPARE" => "N",
+                                    "DISPLAY_TOP_PAGER" => "N",
+                                    "ELEMENT_SORT_FIELD" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_FIELD2" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_ORDER" => "asc,nulls",
+                                    "ELEMENT_SORT_ORDER2" => "asc,nulls",
+                                    "ENLARGE_PRODUCT" => "STRICT",
+                                    "FILTER_NAME" => "arrFilterStroom",
+                                    "HIDE_NOT_AVAILABLE" => "N",
+                                    "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+                                    "IBLOCK_ID" => "8",
+                                    "IBLOCK_TYPE" => "Flats",
+                                    "INCLUDE_SUBSECTIONS" => "Y",
+                                    "LABEL_PROP" => array(
+                                    ),
+                                    "LAZY_LOAD" => "N",
+                                    "LINE_ELEMENT_COUNT" => "3",
+                                    "LOAD_ON_SCROLL" => "N",
+                                    "MESSAGE_404" => "",
+                                    "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+                                    "MESS_BTN_BUY" => "Купить",
+                                    "MESS_BTN_DETAIL" => "Подробнее",
+                                    "MESS_BTN_SUBSCRIBE" => "Подписаться",
+                                    "MESS_NOT_AVAILABLE" => "Нет в наличии",
+                                    "META_DESCRIPTION" => "-",
+                                    "META_KEYWORDS" => "-",
+                                    "OFFERS_LIMIT" => "5",
+                                    "PAGER_BASE_LINK_ENABLE" => "N",
+                                    "PAGER_DESC_NUMBERING" => "N",
+                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                    "PAGER_SHOW_ALL" => "N",
+                                    "PAGER_SHOW_ALWAYS" => "N",
+                                    "PAGER_TEMPLATE" => "round",
+                                    "PAGER_TITLE" => "Товары",
+                                    "PAGE_ELEMENT_COUNT" => "6",
+                                    "PARTIAL_PRODUCT_PROPERTIES" => "N",
+                                    "PRICE_CODE" => array(
+                                    ),
+                                    "PRICE_VAT_INCLUDE" => "Y",
+                                    "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+                                    "PRODUCT_ID_VARIABLE" => "id",
+                                    "PRODUCT_PROPS_VARIABLE" => "prop",
+                                    "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                                    "PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false}]",
+                                    "PRODUCT_SUBSCRIPTION" => "Y",
+                                    "RCM_TYPE" => "personal",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array(
+                                        0 => "",
+                                        1 => "",
+                                    ),
+                                    "SEF_MODE" => "N",
+                                    "SET_BROWSER_TITLE" => "Y",
+                                    "SET_LAST_MODIFIED" => "N",
+                                    "SET_META_DESCRIPTION" => "Y",
+                                    "SET_META_KEYWORDS" => "Y",
+                                    "SET_STATUS_404" => "N",
+                                    "SET_TITLE" => "Y",
+                                    "SHOW_404" => "N",
+                                    "SHOW_ALL_WO_SECTION" => "Y",
+                                    "SHOW_CLOSE_POPUP" => "N",
+                                    "SHOW_DISCOUNT_PERCENT" => "N",
+                                    "SHOW_FROM_SECTION" => "N",
+                                    "SHOW_MAX_QUANTITY" => "N",
+                                    "SHOW_OLD_PRICE" => "N",
+                                    "SHOW_PRICE_COUNT" => "1",
+                                    "SHOW_SLIDER" => "Y",
+                                    "SLIDER_INTERVAL" => "3000",
+                                    "SLIDER_PROGRESS" => "N",
+                                    "TEMPLATE_THEME" => "blue",
+                                    "USE_ENHANCED_ECOMMERCE" => "N",
+                                    "USE_MAIN_ELEMENT_SECTION" => "N",
+                                    "USE_PRICE_COUNT" => "N",
+                                    "USE_PRODUCT_QUANTITY" => "N",
+                                    "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                                    "SECTION_CODE" => "",
+                                    "PROPERTY_CODE_MOBILE" => array(
+                                    ),
+                                    "RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+                                    "SECTION_ID_VARIABLE" => "SECTION_ID"
+                                ),
+                                false
+                            );
+                            echo "</div>";
+                        }
+                              
+								echo "</section>";
+                                echo "<section>";
+                                if(is_array($arrFilter1room) && count($arrFilter1room) > 0){
+                                    
+                                    
+                                    echo '<div class="table sku-items">';
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section", 
+                                "template-flats", 
+                                array(
+                                    "ACTION_VARIABLE" => "action",
+                                    "ADD_PICT_PROP" => "-",
+                                    "ADD_PROPERTIES_TO_BASKET" => "Y",
+                                    "ADD_SECTIONS_CHAIN" => "N",
+                                    "ADD_TO_BASKET_ACTION" => "ADD",
+                                    "AJAX_MODE" => "N",
+                                    "AJAX_OPTION_ADDITIONAL" => "",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "BACKGROUND_IMAGE" => "-",
+                                    "BASKET_URL" => "/personal/basket.php",
+                                    "BROWSER_TITLE" => "-",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COMPATIBLE_MODE" => "Y",
+                                    "COMPONENT_TEMPLATE" => "template-flats",
+                                    "CONVERT_CURRENCY" => "N",
+                                    "CUSTOM_FILTER" => "",
+                                    "DETAIL_URL" => '/condos/#ELEMENT_CODE#',
+                                    "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+                                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                                    "DISPLAY_COMPARE" => "N",
+                                    "DISPLAY_TOP_PAGER" => "N",
+                                    "ELEMENT_SORT_FIELD" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_FIELD2" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_ORDER" => "asc,nulls",
+                                    "ELEMENT_SORT_ORDER2" => "asc,nulls",
+                                    "ENLARGE_PRODUCT" => "STRICT",
+                                    "FILTER_NAME" => "arrFilter1room",
+                                    "HIDE_NOT_AVAILABLE" => "N",
+                                    "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+                                    "IBLOCK_ID" => "8",
+                                    "IBLOCK_TYPE" => "Flats",
+                                    "INCLUDE_SUBSECTIONS" => "Y",
+                                    "LABEL_PROP" => array(
+                                    ),
+                                    "LAZY_LOAD" => "N",
+                                    "LINE_ELEMENT_COUNT" => "3",
+                                    "LOAD_ON_SCROLL" => "N",
+                                    "MESSAGE_404" => "",
+                                    "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+                                    "MESS_BTN_BUY" => "Купить",
+                                    "MESS_BTN_DETAIL" => "Подробнее",
+                                    "MESS_BTN_SUBSCRIBE" => "Подписаться",
+                                    "MESS_NOT_AVAILABLE" => "Нет в наличии",
+                                    "META_DESCRIPTION" => "-",
+                                    "META_KEYWORDS" => "-",
+                                    "OFFERS_LIMIT" => "5",
+                                    "PAGER_BASE_LINK_ENABLE" => "N",
+                                    "PAGER_DESC_NUMBERING" => "N",
+                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                    "PAGER_SHOW_ALL" => "N",
+                                    "PAGER_SHOW_ALWAYS" => "N",
+                                    "PAGER_TEMPLATE" => "round",
+                                    "PAGER_TITLE" => "Товары",
+                                    "PAGE_ELEMENT_COUNT" => "6",
+                                    "PARTIAL_PRODUCT_PROPERTIES" => "N",
+                                    "PRICE_CODE" => array(
+                                    ),
+                                    "PRICE_VAT_INCLUDE" => "Y",
+                                    "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+                                    "PRODUCT_ID_VARIABLE" => "id",
+                                    "PRODUCT_PROPS_VARIABLE" => "prop",
+                                    "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                                    "PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false}]",
+                                    "PRODUCT_SUBSCRIPTION" => "Y",
+                                    "RCM_TYPE" => "personal",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array(
+                                        0 => "",
+                                        1 => "",
+                                    ),
+                                    "SEF_MODE" => "N",
+                                    "SET_BROWSER_TITLE" => "Y",
+                                    "SET_LAST_MODIFIED" => "N",
+                                    "SET_META_DESCRIPTION" => "Y",
+                                    "SET_META_KEYWORDS" => "Y",
+                                    "SET_STATUS_404" => "N",
+                                    "SET_TITLE" => "Y",
+                                    "SHOW_404" => "N",
+                                    "SHOW_ALL_WO_SECTION" => "Y",
+                                    "SHOW_CLOSE_POPUP" => "N",
+                                    "SHOW_DISCOUNT_PERCENT" => "N",
+                                    "SHOW_FROM_SECTION" => "N",
+                                    "SHOW_MAX_QUANTITY" => "N",
+                                    "SHOW_OLD_PRICE" => "N",
+                                    "SHOW_PRICE_COUNT" => "1",
+                                    "SHOW_SLIDER" => "Y",
+                                    "SLIDER_INTERVAL" => "3000",
+                                    "SLIDER_PROGRESS" => "N",
+                                    "TEMPLATE_THEME" => "blue",
+                                    "USE_ENHANCED_ECOMMERCE" => "N",
+                                    "USE_MAIN_ELEMENT_SECTION" => "N",
+                                    "USE_PRICE_COUNT" => "N",
+                                    "USE_PRODUCT_QUANTITY" => "N",
+                                    "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                                    "SECTION_CODE" => "",
+                                    "PROPERTY_CODE_MOBILE" => array(
+                                    ),
+                                    "RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+                                    "SECTION_ID_VARIABLE" => "SECTION_ID"
+                                ),
+                                false
+                                );
+                            echo "</div>";
+                        }
+								
+								echo "</section>";
+                                echo "<section>";
+                                if(is_array($arrFilter2room) && count($arrFilter2room) > 0){
+                                    
+                                    
+                                    echo '<div class="table sku-items">';
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section", 
+                                "template-flats", 
+                                array(
+                                    "ACTION_VARIABLE" => "action",
+                                    "ADD_PICT_PROP" => "-",
+                                    "ADD_PROPERTIES_TO_BASKET" => "Y",
+                                    "ADD_SECTIONS_CHAIN" => "N",
+                                    "ADD_TO_BASKET_ACTION" => "ADD",
+                                    "AJAX_MODE" => "N",
+                                    "AJAX_OPTION_ADDITIONAL" => "",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "BACKGROUND_IMAGE" => "-",
+                                    "BASKET_URL" => "/personal/basket.php",
+                                    "BROWSER_TITLE" => "-",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COMPATIBLE_MODE" => "Y",
+                                    "COMPONENT_TEMPLATE" => "template-flats",
+                                    "CONVERT_CURRENCY" => "N",
+                                    "CUSTOM_FILTER" => "",
+                                    "DETAIL_URL" => '/condos/#ELEMENT_CODE#',
+                                    "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+                                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                                    "DISPLAY_COMPARE" => "N",
+                                    "DISPLAY_TOP_PAGER" => "N",
+                                    "ELEMENT_SORT_FIELD" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_FIELD2" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_ORDER" => "asc,nulls",
+                                    "ELEMENT_SORT_ORDER2" => "asc,nulls",
+                                    "ENLARGE_PRODUCT" => "STRICT",
+                                    "FILTER_NAME" => "arrFilter2room",
+                                    "HIDE_NOT_AVAILABLE" => "N",
+                                    "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+                                    "IBLOCK_ID" => "8",
+                                    "IBLOCK_TYPE" => "Flats",
+                                    "INCLUDE_SUBSECTIONS" => "Y",
+                                    "LABEL_PROP" => array(
+                                    ),
+                                    "LAZY_LOAD" => "N",
+                                    "LINE_ELEMENT_COUNT" => "3",
+                                    "LOAD_ON_SCROLL" => "N",
+                                    "MESSAGE_404" => "",
+                                    "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+                                    "MESS_BTN_BUY" => "Купить",
+                                    "MESS_BTN_DETAIL" => "Подробнее",
+                                    "MESS_BTN_SUBSCRIBE" => "Подписаться",
+                                    "MESS_NOT_AVAILABLE" => "Нет в наличии",
+                                    "META_DESCRIPTION" => "-",
+                                    "META_KEYWORDS" => "-",
+                                    "OFFERS_LIMIT" => "5",
+                                    "PAGER_BASE_LINK_ENABLE" => "N",
+                                    "PAGER_DESC_NUMBERING" => "N",
+                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                    "PAGER_SHOW_ALL" => "N",
+                                    "PAGER_SHOW_ALWAYS" => "N",
+                                    "PAGER_TEMPLATE" => "round",
+                                    "PAGER_TITLE" => "Товары",
+                                    "PAGE_ELEMENT_COUNT" => "6",
+                                    "PARTIAL_PRODUCT_PROPERTIES" => "N",
+                                    "PRICE_CODE" => array(
+                                    ),
+                                    "PRICE_VAT_INCLUDE" => "Y",
+                                    "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+                                    "PRODUCT_ID_VARIABLE" => "id",
+                                    "PRODUCT_PROPS_VARIABLE" => "prop",
+                                    "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                                    "PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false}]",
+                                    "PRODUCT_SUBSCRIPTION" => "Y",
+                                    "RCM_TYPE" => "personal",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array(
+                                        0 => "",
+                                        1 => "",
+                                    ),
+                                    "SEF_MODE" => "N",
+                                    "SET_BROWSER_TITLE" => "Y",
+                                    "SET_LAST_MODIFIED" => "N",
+                                    "SET_META_DESCRIPTION" => "Y",
+                                    "SET_META_KEYWORDS" => "Y",
+                                    "SET_STATUS_404" => "N",
+                                    "SET_TITLE" => "Y",
+                                    "SHOW_404" => "N",
+                                    "SHOW_ALL_WO_SECTION" => "Y",
+                                    "SHOW_CLOSE_POPUP" => "N",
+                                    "SHOW_DISCOUNT_PERCENT" => "N",
+                                    "SHOW_FROM_SECTION" => "N",
+                                    "SHOW_MAX_QUANTITY" => "N",
+                                    "SHOW_OLD_PRICE" => "N",
+                                    "SHOW_PRICE_COUNT" => "1",
+                                    "SHOW_SLIDER" => "Y",
+                                    "SLIDER_INTERVAL" => "3000",
+                                    "SLIDER_PROGRESS" => "N",
+                                    "TEMPLATE_THEME" => "blue",
+                                    "USE_ENHANCED_ECOMMERCE" => "N",
+                                    "USE_MAIN_ELEMENT_SECTION" => "N",
+                                    "USE_PRICE_COUNT" => "N",
+                                    "USE_PRODUCT_QUANTITY" => "N",
+                                    "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                                    "SECTION_CODE" => "",
+                                    "PROPERTY_CODE_MOBILE" => array(
+                                    ),
+                                    "RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+                                    "SECTION_ID_VARIABLE" => "SECTION_ID"
+                                ),
+                                false
+                                );
+                            echo "</div>";
+                        }
+
+								echo "</section>";
+                                echo "<section>";
+                                if(is_array($arrFilter3room) && count($arrFilter3room) > 0){
+                                    
+                                    
+                                    echo '<div class="table sku-items">';
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section", 
+                                "template-flats", 
+                                array(
+                                    "ACTION_VARIABLE" => "action",
+                                    "ADD_PICT_PROP" => "-",
+                                    "ADD_PROPERTIES_TO_BASKET" => "Y",
+                                    "ADD_SECTIONS_CHAIN" => "N",
+                                    "ADD_TO_BASKET_ACTION" => "ADD",
+                                    "AJAX_MODE" => "N",
+                                    "AJAX_OPTION_ADDITIONAL" => "",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "BACKGROUND_IMAGE" => "-",
+                                    "BASKET_URL" => "/personal/basket.php",
+                                    "BROWSER_TITLE" => "-",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COMPATIBLE_MODE" => "Y",
+                                    "COMPONENT_TEMPLATE" => "template-flats",
+                                    "CONVERT_CURRENCY" => "N",
+                                    "CUSTOM_FILTER" => "",
+                                    "DETAIL_URL" => '/condos/#ELEMENT_CODE#',
+                                    "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+                                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                                    "DISPLAY_COMPARE" => "N",
+                                    "DISPLAY_TOP_PAGER" => "N",
+                                    "ELEMENT_SORT_FIELD" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_FIELD2" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_ORDER" => "asc,nulls",
+                                    "ELEMENT_SORT_ORDER2" => "asc,nulls",
+                                    "ENLARGE_PRODUCT" => "STRICT",
+                                    "FILTER_NAME" => "arrFilter3room",
+                                    "HIDE_NOT_AVAILABLE" => "N",
+                                    "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+                                    "IBLOCK_ID" => "8",
+                                    "IBLOCK_TYPE" => "Flats",
+                                    "INCLUDE_SUBSECTIONS" => "Y",
+                                    "LABEL_PROP" => array(
+                                    ),
+                                    "LAZY_LOAD" => "N",
+                                    "LINE_ELEMENT_COUNT" => "3",
+                                    "LOAD_ON_SCROLL" => "N",
+                                    "MESSAGE_404" => "",
+                                    "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+                                    "MESS_BTN_BUY" => "Купить",
+                                    "MESS_BTN_DETAIL" => "Подробнее",
+                                    "MESS_BTN_SUBSCRIBE" => "Подписаться",
+                                    "MESS_NOT_AVAILABLE" => "Нет в наличии",
+                                    "META_DESCRIPTION" => "-",
+                                    "META_KEYWORDS" => "-",
+                                    "OFFERS_LIMIT" => "5",
+                                    "PAGER_BASE_LINK_ENABLE" => "N",
+                                    "PAGER_DESC_NUMBERING" => "N",
+                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                    "PAGER_SHOW_ALL" => "N",
+                                    "PAGER_SHOW_ALWAYS" => "N",
+                                    "PAGER_TEMPLATE" => "round",
+                                    "PAGER_TITLE" => "Товары",
+                                    "PAGE_ELEMENT_COUNT" => "6",
+                                    "PARTIAL_PRODUCT_PROPERTIES" => "N",
+                                    "PRICE_CODE" => array(
+                                    ),
+                                    "PRICE_VAT_INCLUDE" => "Y",
+                                    "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+                                    "PRODUCT_ID_VARIABLE" => "id",
+                                    "PRODUCT_PROPS_VARIABLE" => "prop",
+                                    "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                                    "PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false}]",
+                                    "PRODUCT_SUBSCRIPTION" => "Y",
+                                    "RCM_TYPE" => "personal",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array(
+                                        0 => "",
+                                        1 => "",
+                                    ),
+                                    "SEF_MODE" => "N",
+                                    "SET_BROWSER_TITLE" => "Y",
+                                    "SET_LAST_MODIFIED" => "N",
+                                    "SET_META_DESCRIPTION" => "Y",
+                                    "SET_META_KEYWORDS" => "Y",
+                                    "SET_STATUS_404" => "N",
+                                    "SET_TITLE" => "Y",
+                                    "SHOW_404" => "N",
+                                    "SHOW_ALL_WO_SECTION" => "Y",
+                                    "SHOW_CLOSE_POPUP" => "N",
+                                    "SHOW_DISCOUNT_PERCENT" => "N",
+                                    "SHOW_FROM_SECTION" => "N",
+                                    "SHOW_MAX_QUANTITY" => "N",
+                                    "SHOW_OLD_PRICE" => "N",
+                                    "SHOW_PRICE_COUNT" => "1",
+                                    "SHOW_SLIDER" => "Y",
+                                    "SLIDER_INTERVAL" => "3000",
+                                    "SLIDER_PROGRESS" => "N",
+                                    "TEMPLATE_THEME" => "blue",
+                                    "USE_ENHANCED_ECOMMERCE" => "N",
+                                    "USE_MAIN_ELEMENT_SECTION" => "N",
+                                    "USE_PRICE_COUNT" => "N",
+                                    "USE_PRODUCT_QUANTITY" => "N",
+                                    "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                                    "SECTION_CODE" => "",
+                                    "PROPERTY_CODE_MOBILE" => array(
+                                    ),
+                                    "RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+                                    "SECTION_ID_VARIABLE" => "SECTION_ID"
+                                ),
+                                false
+                                );
+                            echo "</div>";
+                        }
+
+								echo "</section>";
+                                echo "<section>";
+                                if(is_array($arrFilter4room) && count($arrFilter4room) > 0){
+                                    
+                                    
+                                    echo '<div class="table sku-items">';
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:catalog.section", 
+                                "template-flats", 
+                                array(
+                                    "ACTION_VARIABLE" => "action",
+                                    "ADD_PICT_PROP" => "-",
+                                    "ADD_PROPERTIES_TO_BASKET" => "Y",
+                                    "ADD_SECTIONS_CHAIN" => "N",
+                                    "ADD_TO_BASKET_ACTION" => "ADD",
+                                    "AJAX_MODE" => "N",
+                                    "AJAX_OPTION_ADDITIONAL" => "",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "BACKGROUND_IMAGE" => "-",
+                                    "BASKET_URL" => "/personal/basket.php",
+                                    "BROWSER_TITLE" => "-",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_TYPE" => "A",
+                                    "COMPATIBLE_MODE" => "Y",
+                                    "COMPONENT_TEMPLATE" => "template-flats",
+                                    "CONVERT_CURRENCY" => "N",
+                                    "CUSTOM_FILTER" => "",
+                                    "DETAIL_URL" => '/condos/#ELEMENT_CODE#',
+                                    "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+                                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                                    "DISPLAY_COMPARE" => "N",
+                                    "DISPLAY_TOP_PAGER" => "N",
+                                    "ELEMENT_SORT_FIELD" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_FIELD2" => "property_PRICE_".strtoupper(LANGUAGE_ID),
+                                    "ELEMENT_SORT_ORDER" => "asc,nulls",
+                                    "ELEMENT_SORT_ORDER2" => "asc,nulls",
+                                    "ENLARGE_PRODUCT" => "STRICT",
+                                    "FILTER_NAME" => "arrFilter4room",
+                                    "HIDE_NOT_AVAILABLE" => "N",
+                                    "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+                                    "IBLOCK_ID" => "8",
+                                    "IBLOCK_TYPE" => "Flats",
+                                    "INCLUDE_SUBSECTIONS" => "Y",
+                                    "LABEL_PROP" => array(
+                                    ),
+                                    "LAZY_LOAD" => "N",
+                                    "LINE_ELEMENT_COUNT" => "3",
+                                    "LOAD_ON_SCROLL" => "N",
+                                    "MESSAGE_404" => "",
+                                    "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+                                    "MESS_BTN_BUY" => "Купить",
+                                    "MESS_BTN_DETAIL" => "Подробнее",
+                                    "MESS_BTN_SUBSCRIBE" => "Подписаться",
+                                    "MESS_NOT_AVAILABLE" => "Нет в наличии",
+                                    "META_DESCRIPTION" => "-",
+                                    "META_KEYWORDS" => "-",
+                                    "OFFERS_LIMIT" => "5",
+                                    "PAGER_BASE_LINK_ENABLE" => "N",
+                                    "PAGER_DESC_NUMBERING" => "N",
+                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                    "PAGER_SHOW_ALL" => "N",
+                                    "PAGER_SHOW_ALWAYS" => "N",
+                                    "PAGER_TEMPLATE" => "round",
+                                    "PAGER_TITLE" => "Товары",
+                                    "PAGE_ELEMENT_COUNT" => "6",
+                                    "PARTIAL_PRODUCT_PROPERTIES" => "N",
+                                    "PRICE_CODE" => array(
+                                    ),
+                                    "PRICE_VAT_INCLUDE" => "Y",
+                                    "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+                                    "PRODUCT_ID_VARIABLE" => "id",
+                                    "PRODUCT_PROPS_VARIABLE" => "prop",
+                                    "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                                    "PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false},{'VARIANT':'9','BIG_DATA':false}]",
+                                    "PRODUCT_SUBSCRIPTION" => "Y",
+                                    "RCM_TYPE" => "personal",
+                                    "SECTION_URL" => "",
+                                    "SECTION_USER_FIELDS" => array(
+                                        0 => "",
+                                        1 => "",
+                                    ),
+                                    "SEF_MODE" => "N",
+                                    "SET_BROWSER_TITLE" => "Y",
+                                    "SET_LAST_MODIFIED" => "N",
+                                    "SET_META_DESCRIPTION" => "Y",
+                                    "SET_META_KEYWORDS" => "Y",
+                                    "SET_STATUS_404" => "N",
+                                    "SET_TITLE" => "Y",
+                                    "SHOW_404" => "N",
+                                    "SHOW_ALL_WO_SECTION" => "Y",
+                                    "SHOW_CLOSE_POPUP" => "N",
+                                    "SHOW_DISCOUNT_PERCENT" => "N",
+                                    "SHOW_FROM_SECTION" => "N",
+                                    "SHOW_MAX_QUANTITY" => "N",
+                                    "SHOW_OLD_PRICE" => "N",
+                                    "SHOW_PRICE_COUNT" => "1",
+                                    "SHOW_SLIDER" => "Y",
+                                    "SLIDER_INTERVAL" => "3000",
+                                    "SLIDER_PROGRESS" => "N",
+                                    "TEMPLATE_THEME" => "blue",
+                                    "USE_ENHANCED_ECOMMERCE" => "N",
+                                    "USE_MAIN_ELEMENT_SECTION" => "N",
+                                    "USE_PRICE_COUNT" => "N",
+                                    "USE_PRODUCT_QUANTITY" => "N",
+                                    "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                                    "SECTION_CODE" => "",
+                                    "PROPERTY_CODE_MOBILE" => array(
+                                    ),
+                                    "RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+                                    "SECTION_ID_VARIABLE" => "SECTION_ID"
+                                ),
+                                false
+                            );
+                        }?>
+
+								</section>
+                                <section>
+                                  4
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
+                                </section>
+                              </div>
+                            </div>
+                                
+                                
+                                <!-- ================= -->
+                                
+                                
                                 
                                 <table class="SKU-items">
                                     <thead>

@@ -165,7 +165,13 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
 </div>
 <?
 
+?>
 
+<!-- pre>
+<?//foreach ($arResult as $mymy) {print_r($mymy);};?>
+</pre>
+ -->
+<?
 if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
     ?>
     <div class="max-width">
@@ -515,7 +521,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
         <div class="max-width">
             <div class="detail-block">
                 <div class="block-title">
-                    <span style="text-align: left;">
+                    <span style="text-align: left;"><h1 class="H1-huge-title">
                         <?
                         $getList = CIBlockElement::GetList(array('SORT' => 'ASC'), array('NAME' => $arResult['PROPERTIES']['PROJECT_BRAND_NAME_EN']['VALUE'], 'IBLOCK_ID' => 4));
                         $getUrl = $getList->GetNext();
@@ -540,7 +546,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                             echo str_replace($arResult['CODE'], '', $arResult['NAME']);
                         }
                         ?>    
-                    </span>
+                    </h1></span>
                 </div>
                 <div class="price-huge">
                     <?

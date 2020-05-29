@@ -641,6 +641,10 @@ div.max-width {
     margin: 30px 0
 }
 
+.block-title span h1.H1-huge-title {
+    all: inherit;
+}
+
 .news-item a,
 .block-title>a,
 .about-main a,
@@ -719,6 +723,10 @@ div.max-width {
     font-weight: 700;
     color: #4b4b4b;
     height: auto
+}
+
+.main-content:not(.mainsitepage) .background-gray .block-title span h1.H1-huge-title {
+	all: inherit;
 }
 
 .company-text,
