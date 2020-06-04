@@ -53,8 +53,8 @@
         <div class="form">
             <div class="title"><?=GetMessage('TITLE_QUOTE')?></div>
             <div class="inputs">
-                <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>">
-                <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>">
+                <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>*">
+                <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>*">
                 <input type="hidden" name="bank">
                 <div class="agreement"><?=GetMessage('SENDING_TEXT')?>
                     <a href="/agreement/" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
@@ -210,7 +210,7 @@
                 <div class="callback">
                     <span class="footer-title"><?=GetMessage('CALL_BACK')?></span>
                     <div class="form">
-                        <input type="text" name="phone" placeholder="<?=GetMessage('PHONE')?>">
+                        <input type="text" name="phone" placeholder="<?=GetMessage('PHONE')?>*">
                         <button disabled="disabled" class="confirm-callback"><?=GetMessage('CALL_ME')?></button>
                         <div class="checkboxAgrementBlockInFooter">
                             <input type="checkbox" id="idCheckboxInFooter" onchange="funcOnchangeCheckboxInFooter()">
