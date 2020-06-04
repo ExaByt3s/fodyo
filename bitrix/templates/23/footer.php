@@ -575,6 +575,7 @@ $(document).ready(function () {
         var a = $(this).parent().parent(),
             b = a.find('input[name="name"]').val(),
             c = a.find('input[name="phone"]').val(),
+			z = a.find('input[name="email"]').val(),
             f = a.find("textarea").val(),
             d = a.find('input[name="captcha"]').val();
         "" == c && (a.find('input[name="phone"]').css("border-color", "red"), a.find('input[name="phone"]').focus());
@@ -586,7 +587,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 dataType: "html",
-                url: "<?=SITE_TEMPLATE_PATH?>/ajax/ajax_contact_send.php?name=" + b + "&phone=" + c + "&text=" + f + "&captcha=" + d,
+                url: "<?=SITE_TEMPLATE_PATH?>/ajax/ajax_contact_send.php?name=" + b + "&phone=" + c + "&email=" + z + "&text=" + f + "&captcha=" + d,
                 success: function (b) {
                     "Success" != b
                         ? "captchaError" == b

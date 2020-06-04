@@ -8,6 +8,9 @@ if($_REQUEST['name'] != ''){
 if($_REQUEST['text'] != ''){
 	$arEventFields['TEXT'] = $_REQUEST['text'];
 }
+if($_REQUEST['email'] != ''){
+	$arEventFields['EMAIL'] = $_REQUEST['email'];
+}
 if(!is_numeric($phone)){
 	echo GetMessage('ERROR_NOT_NUMBER');
 	exit();

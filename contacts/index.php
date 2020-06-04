@@ -30,7 +30,10 @@ Moscow, 107392<br>
  <span class="micro-title">Contact Us</span>
 	</div>
 	<div class="form-cons">
- <input type="text" name="name" placeholder="Write your name"> <input type="text" name="phone" placeholder="Write your phone"> <textarea placeholder="Write your message"></textarea>
+ <input type="text" name="name" placeholder="Write your name*"> 
+ <input type="text" name="phone" placeholder="Write your phone*"> 
+ <input type="email" name="email" placeholder="Напишите ваш email">
+ <textarea placeholder="Write your message"></textarea>
 		<div class="flex-captcha">
  <img src="/bitrix/templates/23/ajax/captcha.php" class="captchaImg" title="Reload"> <input type="text" name="captcha" placeholder="Text from image">
 		</div>

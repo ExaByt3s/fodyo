@@ -27,7 +27,10 @@ $APPLICATION->setTitle("Контакты");
  <span class="micro-title">Бесплатная косультация</span>
 	</div>
 	<div class="form-cons">
- <input type="text" name="name" placeholder="Напишите ваше имя"> <input type="text" name="phone" placeholder="Напишите ваш телефон"> <textarea placeholder="Введите сообщение"></textarea>
+ <input type="text" name="name" placeholder="Напишите ваше имя*"> 
+ <input type="text" name="phone" placeholder="Напишите ваш телефон*">
+ <input type="email" name="email" placeholder="Напишите ваш email">
+ <textarea placeholder="Введите сообщение"></textarea>
 		<div class="flex-captcha">
  <img src="/bitrix/templates/23/ajax/captcha.php" class="captchaImg" title="Перезагрузить"> <input type="text" name="captcha" placeholder="Текст с изображения">
 		</div>
