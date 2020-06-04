@@ -22,6 +22,7 @@
             <div class="inputs">
                 <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>*">
                 <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>*">
+				<input type="email" name="email" placeholder="E-mail">
                 <div class="checkboxAgrementBlockInPopup">
                     <input type="checkbox" id="idCheckboxInPopup" onchange="funcOnchangeCheckboxInPopup()">
                     <div class="agreement">
@@ -55,6 +56,7 @@
             <div class="inputs">
                 <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>*">
                 <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>*">
+				<input type="email" name="email" placeholder="E-mail">
                 <input type="hidden" name="bank">
                 <div class="agreement"><?=GetMessage('SENDING_TEXT')?>
                     <a href="/agreement/" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
@@ -534,7 +536,8 @@ $(document).ready(function () {
         console.log("not contact-form-submit");
         var a = $(this).parent().parent(),
             b = a.find('input[name="name"]').val(),
-            c = a.find('input[name="phone"]').val();
+            c = a.find('input[name="phone"]').val(),
+			z = a.find('input[name="email"]').val();
         "" == c
             ? (a.find('input[name="phone"]').css("border-color", "red"), a.find('input[name="phone"]').focus())
             : (a.find('input[name="phone"]').css("border-color", "gray"),
@@ -547,7 +550,7 @@ $(document).ready(function () {
                           ? $.ajax({
                                 type: "POST",
                                 dataType: "html",
-                                url: "https://fodyo.ru/ajax_form_send.php?name=" + b + "&phone=" + c + "&CURDIR=<?=$APPLICATION->GetCurDir()?>",
+                                url: "https://fodyo.ru/ajax_form_send.php?name=" + b + "&phone=" + c + "&email=" + z + "&CURDIR=<?=$APPLICATION->GetCurDir()?>",
                                 success: function (b) {
                                     "Success" != b
                                         ? (a.find('input[name="phone"]').css("border-color", "red"), a.find('input[name="phone"]').val(""), a.find('input[name="phone"]').focus(), a.find('input[name="phone"]').attr("placeholder", b))
@@ -557,7 +560,7 @@ $(document).ready(function () {
                           : $.ajax({
                                 type: "POST",
                                 dataType: "html",
-                                url: "<?=SITE_TEMPLATE_PATH?>/ajax/ajax_form_send.php?name=" + b + "&phone=" + c + "&CURDIR=<?=$APPLICATION->GetCurDir()?>",
+                                url: "<?=SITE_TEMPLATE_PATH?>/ajax/ajax_form_send.php?name=" + b + "&phone=" + c + "&email=" + z + "&CURDIR=<?=$APPLICATION->GetCurDir()?>",
                                 success: function (b) {
                                     "Success" != b
                                         ? (a.find('input[name="phone"]').css("border-color", "red"), a.find('input[name="phone"]').val(""), a.find('input[name="phone"]').focus(), a.find('input[name="phone"]').attr("placeholder", b))

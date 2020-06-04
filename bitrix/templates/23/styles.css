@@ -2057,7 +2057,7 @@ a.more-button {
     justify-content: center
 }
 
-.inputs input[type="text"] {
+.inputs input[type="text"], .inputs input[type="email"] {
     display: block;
     width: calc(100% - 22px);
     padding: 10px;

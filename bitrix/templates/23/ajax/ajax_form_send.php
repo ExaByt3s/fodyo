@@ -7,6 +7,9 @@ IncludeTemplateLangFile(__FILE__);
 if($_REQUEST['name'] != ''){
 	$arEventFields['NAME'] = $_REQUEST['name'];
 }
+if($_REQUEST['email'] != ''){
+	$arEventFields['EMAIL'] = $_REQUEST['email'];
+}
 if(!is_numeric($phone)){
 	echo GetMessage('ERROR_NOT_NUMBER');
 	exit();
