@@ -2154,13 +2154,15 @@ a.more-button {
     }
     .flex-countries {
         display: flex;
-        flex-wrap: wrap
+        flex-wrap: wrap;
+		justify-content: center;
     }
     .flex-countries li {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc(33% - 60px)
+        width: calc(33% - 60px);
+		justify-content: flex-start;
     }
     .flex-countries a {
         margin: 5px
