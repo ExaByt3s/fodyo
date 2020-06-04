@@ -23,20 +23,20 @@
                 <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>*">
                 <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>*">
 				<input type="email" name="email" placeholder="E-mail">
-                <div class="checkboxAgrementBlockInPopup">
+                <label for="idCheckboxInPopup" class="checkboxAgrementBlockInPopup">
                     <input type="checkbox" id="idCheckboxInPopup" onchange="funcOnchangeCheckboxInPopup()">
                     <div class="agreement">
                         <?=GetMessage('SENDING_TEXT')?>
                         <a href="<?=GetMessage('HREF_POLICY')?>" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
                     </div>
-                </div>
-                <div class="checkboxPolicyBlockInPopup">
+                </label>
+                <label for="idCheckboxPolicyInPopup" class="checkboxPolicyBlockInPopup">
                     <input type="checkbox" id="idCheckboxPolicyInPopup" onchange="funcOnchangeCheckboxInPopup()">
                     <div class="agreement">
                         <?=GetMessage('SENDING_TEXT2')?>
                         <a href="<?=GetMessage('HREF_POLICY')?>" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT2')?></a>
                     </div>
-                </div>
+                </label>
                 <!--<div class="agreement"><?=GetMessage('SENDING_TEXT')?>
                     <a href="/agreement/" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
                 </div>
@@ -214,20 +214,20 @@
                     <div class="form">
                         <input type="text" name="phone" placeholder="<?=GetMessage('PHONE')?>*">
                         <button disabled="disabled" class="confirm-callback"><?=GetMessage('CALL_ME')?></button>
-                        <div class="checkboxAgrementBlockInFooter">
+                        <label for="idCheckboxInFooter" class="checkboxAgrementBlockInFooter">
                             <input type="checkbox" id="idCheckboxInFooter" onchange="funcOnchangeCheckboxInFooter()">
                             <div class="white">
                                 <?=GetMessage('SENDING_TEXT')?>
                                 <a href="<?=GetMessage('HREF_POLICY')?>" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
                             </div>
-                        </div>
-                        <div class="checkboxPolicyBlockInFooter">
+                        </label>
+                        <label for="idCheckboxPolicyInFooter" class="checkboxPolicyBlockInFooter">
                             <input type="checkbox" id="idCheckboxPolicyInFooter" onchange="funcOnchangeCheckboxInFooter()">
                             <div class="white">
                                 <?=GetMessage('SENDING_TEXT2')?>
                                 <a href="<?=GetMessage('HREF_POLICY')?>" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT2')?></a>
                             </div>
-                        </div>
+                        </label>
                     </div>
                     <div class="social-icons">
                         <a target="_blank" href="https://web.facebook.com/FodyoWorld"><img width="30px;" src="<?=SITE_TEMPLATE_PATH?>/images/facebook.jpg" style="border-radius: 10px;"></a>
@@ -500,13 +500,14 @@ $(document).ready(function () {
             b = a.find('input[name="name"]').val(),
             c = a.find('input[name="phone"]').val(),
             f = a.find('input[name="bank"]').val();
+			z = a.find('input[name="email"]').val();
         "" == c
             ? (a.find('input[name="phone"]').css("border-color", "red"), a.find('input[name="phone"]').focus())
             : (a.find('input[name="phone"]').css("border-color", "gray"),
               $.ajax({
                   type: "POST",
                   dataType: "html",
-                  url: "<?=SITE_TEMPLATE_PATH?>/ajax/ajax_quote_send.php?name=" + b + "&phone=" + c + "&bankname=" + f,
+                  url: "<?=SITE_TEMPLATE_PATH?>/ajax/ajax_quote_send.php?name=" + b + "&phone=" + c + "&email=" + z + "&bankname=" + f,
                   success: function (b) {
                       "Success" != b
                           ? (a.find('input[name="phone"]').css("border-color", "red"), a.find('input[name="phone"]').val(""), a.find('input[name="phone"]').focus(), a.find('input[name="phone"]').attr("placeholder", b))

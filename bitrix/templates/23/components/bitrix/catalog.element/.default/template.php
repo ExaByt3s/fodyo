@@ -2779,25 +2779,26 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                 </div>
                             </div>
                             <div class="form-cons">
-                                <input type="text" name="name" placeholder="<?=GetMessage('WRITE_YOUR_NAME')?>">
-                                <input type="text" name="phone" placeholder="<?=GetMessage('WRITE_YOUR_PHONE')?>">
+                                <input type="text" name="name" placeholder="<?=GetMessage('WRITE_YOUR_NAME')?>*">
+                                <input type="text" name="phone" placeholder="<?=GetMessage('WRITE_YOUR_PHONE')?>*">
+								<input type="email" name="email" placeholder="E-mail">
                                 <div class="form-cons-submit form-submit" id="hrefButtonSidebarForm">
                                     <?=GetMessage('LEFT_APPLICATION')?>
                                 </div>
-                                <div class="checkboxAgrementBlockInSidebar">
+                                <label for="idCheckboxInSidebar" class="checkboxAgrementBlockInSidebar">
                                     <input type="checkbox" id="idCheckboxInSidebar" onchange="funcOnchangeCheckboxInSidebar()">
                                     <div class="black">
                                         <?=GetMessage('SENDING_TEXT')?>
                                         <a href="<?=GetMessage('HREF_POLICY')?>" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
                                     </div>
-                                </div>
-                                <div class="checkboxPolicyBlockInSidebar">
+                                </label>
+                                <label for="idCheckboxPolicyInSidebar" class="checkboxPolicyBlockInSidebar">
                                     <input type="checkbox" id="idCheckboxPolicyInSidebar" onchange="funcOnchangeCheckboxInSidebar()">
                                     <div class="black">
                                         <?=GetMessage('SENDING_TEXT2')?>
                                         <a href="<?=GetMessage('HREF_POLICY')?>" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT2')?></a>
                                     </div>
-                                </div>
+                                </label>
                                 <!--<div class="black">
                                     <?=GetMessage('SENDING_TEXT')?>
                                     <a href="/agreement/" class="agreement-link" target="_blank"><?=GetMessage('AGREEMENT_TEXT')?></a>
