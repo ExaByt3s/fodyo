@@ -20,8 +20,8 @@
         <div class="form">
             <div class="title"><?=GetMessage('TITLE_APPLICATION')?></div>
             <div class="inputs">
-                <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>">
-                <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>">
+                <input type="text" name="name" placeholder="<?=GetMessage('NAME_PLACEHOLDER')?>*">
+                <input type="text" name="phone" placeholder="<?=GetMessage('PHONE_PLACEHOLDER')?>*">
                 <div class="checkboxAgrementBlockInPopup">
                     <input type="checkbox" id="idCheckboxInPopup" onchange="funcOnchangeCheckboxInPopup()">
                     <div class="agreement">
