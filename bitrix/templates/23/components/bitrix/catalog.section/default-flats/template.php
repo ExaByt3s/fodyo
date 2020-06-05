@@ -168,15 +168,27 @@ $checkRes = CIBlockSection::GetList(
     Array("SORT" =>" NAME"),
     Array('ID' => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']),
     false,
-    Array('IBLOCK_ID', 'ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_URL', 'UF_TOP_DEVELOPER', 'UF_BOROU'),
+    Array('IBLOCK_ID', 'ID', 'IBLOCK_SECTION_ID', 'NAME', 'DETAIL_URL', 'UF_TOP_DEVELOPER', 'UF_BOROU', 'UF_SKLON', 'UF_NAME_RU'),
     false
 );
+
 if($checkFetch = $checkRes -> GetNext()){
     
     $hereSect = $checkFetch;
 }
 
+$my_ht = CIBlockSection::GetList(
+	Array("SORT" =>" NAME"),
+    Array('ID' => $hereSect['IBLOCK_SECTION_ID'], 'IBLOCK_ID' => $arParams['IBLOCK_ID']),
+    false,
+    Array('UF_SKLON', 'UF_NAME_RU'),
+    false
+);
 
+if($my_poe = $my_ht -> GetNext()){
+    
+    $my_joe = $my_poe;
+}
 
 if( stristr($APPLICATION->GetCurDir(), 'neighborhood') ){
     $testRes = CIBlockSection::GetList(
@@ -816,12 +828,32 @@ if(LANGUAGE_ID == 'en'){
             $APPLICATION->setTitle( 'Квартиры в '. $titleFor);
 
         }elseif(stristr($APPLICATION->GetCurDir(), 'developments')){
+			
+			if ($my_joe['UF_SKLON']) {
+					$mymy = $my_joe['UF_SKLON'];
+				} else {
+					$mymy = $my_joe['UF_NAME_RU'];
+				}	
+				
+			if (!$arResult['NAV_RESULT'] -> arResult) {
+				
+				$APPLICATION->SetPageProperty("title", 'Новостройки от застройщика '. $hereSect['UF_NAME_RU'] .' : квартиры в новостройках от компании '. $hereSect['UF_NAME_RU'] .' в '. $mymy);
 
-            $APPLICATION->SetPageProperty("title", 'Новостройки в '. $titleFor .', 🏢 продажа квартир в новостройке в '. $titleFor .' - портал Fodyo.com');
+				$APPLICATION->SetPageProperty("description", ' Квартиры в новостройках от застройщика '. $hereSect['UF_NAME_RU'] .' в '. $mymy .'. Актуальные цены на квартиры от компании '. $hereSect['UF_NAME_RU'] .', фото, отзывы покупателей.');
 
-            $APPLICATION->SetPageProperty("description", 'Полное собрание всех новостроек в '. $titleFor .' недорого. Портал 👉🏻 Fodyo.com 👈🏻 пригодится тем, кого интересует информация по новостройкам в '. $titleFor .'. Тут осуществляется продажа новостроек в '. $titleFor .' по выгодным условиям. ✅');
+				$APPLICATION->SetPageProperty("page_title", 'Новостройки в '. $mymy);
 
-            $APPLICATION->SetPageProperty("page_title", 'Новостройки в '. $titleFor);
+					
+			} else {
+				$APPLICATION->SetPageProperty("title", 'Новостройки в '. $mymy .', 🏢 продажа квартир в новостройке в '. $mymy .' - портал Fodyo.com');
+
+				$APPLICATION->SetPageProperty("description", 'Полное собрание всех новостроек в '. $mymy .' недорого. Портал 👉🏻 Fodyo.com 👈🏻 пригодится тем, кого интересует информация по новостройкам в '. $titleFor .'. Тут осуществляется продажа новостроек в '. $titleFor .' по выгодным условиям. ✅');
+
+				$APPLICATION->SetPageProperty("page_title", '11Новостройки в '. $mymy);
+			}
+
+			
+			
         }
     }
 }

@@ -98,13 +98,6 @@ if(LANGUAGE_ID == 'en'){
 
             $APPLICATION->setTitle( 'Квартиры в '. $titleFor);
 
-        }elseif(stristr($APPLICATION->GetCurDir(), 'developments')){
-
-            $APPLICATION->SetPageProperty("title", 'Новостройки в '. $titleFor .', 🏢 продажа квартир в новостройке в '. $titleFor .' - портал Fodyo.com');
-
-            $APPLICATION->SetPageProperty("description", 'Полное собрание всех новостроек в '. $titleFor .' недорого. Портал 👉🏻 Fodyo.com 👈🏻 пригодится тем, кого интересует информация по новостройкам в '. $titleFor .'. Тут осуществляется продажа новостроек в '. $titleFor .' по выгодным условиям. ✅');
-
-            $APPLICATION->SetPageProperty("page_title", 'Новостройки в '. $titleFor);
         }
     }
 }
