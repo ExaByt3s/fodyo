@@ -36,7 +36,7 @@ $this->setFrameMode(true);
                     <?endif;?>
                 <?endif?>
             </div>
-            <div class="text"> 
+            <div class="text my_mt0"> 
                 <div class="news-title">
                     <?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
                         <?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>

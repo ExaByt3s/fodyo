@@ -167,10 +167,10 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
 
 ?>
 
-<!-- pre>
-<?//foreach ($arResult as $mymy) {print_r($mymy);};?>
+<!--pre>
+<?//print_r($arResult);?>
 </pre>
- -->
+-->
 <?
 if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
     ?>
@@ -714,6 +714,7 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                                             <?
                                             $getList = CIBlockElement::GetList(array('SORT' => 'ASC'), array('NAME' => $arResult['PROPERTIES']['PROJECT_BRAND_NAME_EN']['VALUE'], 'IBLOCK_ID' => 4));
                                             $getUrl = $getList->GetNext();
+											?><pre><?=$getUrl['DETAIL_PAGE_URL']?></pre><?
                                             $explode = explode('/', $APPLICATION->GetCurDir());
 
                                             $getUrl['DETAIL_PAGE_URL'] = str_replace('/'.strtolower(LANGUAGE_ID), '', $getUrl['DETAIL_PAGE_URL']);
@@ -1358,10 +1359,26 @@ if(isset($_REQUEST['sku-preview']) && $_REQUEST['sku-preview'] == 'Y'){
                         ?>
                         
 
-                        <div class="ipoteka background-gray" style="padding: 10px 0 50px;">
+                        <?
+						$arSelect = Array('*');
+						$arFilter = Array("IBLOCK_ID"=>4, "ID"=>$arResult['PROPERTIES']['CML2_LINK']['VALUE']);
+						$res = CIBlockElement::GetList(Array(), $arFilter, false, Array(), $arSelect);
+						while($ob = $res->GetNextElement()){ 
+						 $arFields = $ob->GetFields();  
+						//print_r($arFields);
+						 $arProps = $ob->GetProperties();
+						}
+						$resec = CIBlockElement::GetList(Array(), Array("IBLOCK_ID"=>12), false, Array(), Array('*'));
+						while($obec = $resec->GetNextElement()){ 
+						 $arFieldsec = $obec->GetFields();
+						}
+						print_r($arFieldsec);
+						?>
+						<div class="ipoteka background-gray" style="padding: 10px 0 50px;">
                             <span class="block-title" style="padding: 0 15px;color: #4b4b4b;font-size: 32px;font-weight: bold;margin: 30px 0;display: block;"><?=GetMessage('IPOTEKA_BANKS')?></span>
                             <div class="max-width">
                                 <div class="flex-banks">
+								<?foreach ($arProps['BANKI']['VALUE'] as $tyty) {echo $tyty . '<br />';};?>
                                     <?
                                     $explode = explode('/', $APPLICATION->GetCurDir());
                                     $xplo = explode('-', $explode[1]);

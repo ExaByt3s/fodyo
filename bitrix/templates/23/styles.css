@@ -150,6 +150,12 @@ body {
     font-family: "Montserrat";
     margin: 0
 }
+
+.text.my_mt0 {
+	margin-top: 0;
+	text-align: left;
+}
+
 .bx-inc-orginfo-phone{
     display: flex;
     flex-direction: column;

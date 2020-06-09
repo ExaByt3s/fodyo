@@ -29,7 +29,7 @@ $this->setFrameMode(true);
     <?endif;?>
     <?
     if($arResult['PROPERTIES']['NAME_'.strtoupper(LANGUAGE_ID)]){
-        ?><h3><?print_r($arResult['PROPERTIES']['NAME_'.strtoupper(LANGUAGE_ID)]['VALUE'])?></h3><?
+        ?><h2><?print_r($arResult['PROPERTIES']['NAME_'.strtoupper(LANGUAGE_ID)]['VALUE'])?></h2><?
         $APPLICATION->SetPageProperty('title', $arResult['PROPERTIES']['NAME_'.strtoupper(LANGUAGE_ID)]['VALUE']);
     }
     //echo "<pre>"; print_r($arResult['PROPERTIES']); echo "</pre>";
